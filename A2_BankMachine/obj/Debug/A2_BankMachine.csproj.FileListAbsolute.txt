@@ -1,0 +1,2 @@
+d:\hdd libraries\documents\visual studio 2015\Projects\A2_BankMachine\A2_BankMachine\bin\Debug\A2_BankMachine.exe.config
+C:\Dev\4HC3_A2\A2_BankMachine\bin\Debug\A2_BankMachine.exe.config
