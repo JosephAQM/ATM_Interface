@@ -66,6 +66,38 @@
             this.btn_ContinueLogout = new System.Windows.Forms.Button();
             this.btn_ContinueYes = new System.Windows.Forms.Button();
             this.lbl_ContinueBanking = new System.Windows.Forms.Label();
+            this.pnl_AccountBalance1 = new System.Windows.Forms.Panel();
+            this.pnl_AccountBalance2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_ViewBalanceChequing = new System.Windows.Forms.Button();
+            this.btn_ViewBalanceSavings = new System.Windows.Forms.Button();
+            this.lbl_VBAccountBalance = new System.Windows.Forms.Label();
+            this.lbl_VBAccountType = new System.Windows.Forms.Label();
+            this.lbl_VBOK = new System.Windows.Forms.Button();
+            this.pnl_Transfers1 = new System.Windows.Forms.Panel();
+            this.pnl_Transfers2 = new System.Windows.Forms.Panel();
+            this.pnl_Transfers3 = new System.Windows.Forms.Panel();
+            this.pnl_Transfers4 = new System.Windows.Forms.Panel();
+            this.lbl_Transfers1 = new System.Windows.Forms.Label();
+            this.btn_Transfer1Chequing = new System.Windows.Forms.Button();
+            this.btn_Transfer1Savings = new System.Windows.Forms.Button();
+            this.lbl_Transfers2 = new System.Windows.Forms.Label();
+            this.btn_Transfer2Chequing = new System.Windows.Forms.Button();
+            this.btn_Transfer2Savings = new System.Windows.Forms.Button();
+            this.lbl_Transfer3 = new System.Windows.Forms.Label();
+            this.tb_TransferAmount = new System.Windows.Forms.TextBox();
+            this.btn_Transfer3OK = new System.Windows.Forms.Button();
+            this.btn_Transfer3Back = new System.Windows.Forms.Button();
+            this.lbl_Transfer3Error = new System.Windows.Forms.Label();
+            this.lbl_Transfer4Title = new System.Windows.Forms.Label();
+            this.lbl_Transfer4 = new System.Windows.Forms.Label();
+            this.btn_Transfer4Yes = new System.Windows.Forms.Button();
+            this.btn_Transfer4Back = new System.Windows.Forms.Button();
+            this.pnl_Transfers5 = new System.Windows.Forms.Panel();
+            this.lbl_TransferSuccess = new System.Windows.Forms.Label();
+            this.lbl_T5NewChequingBalance = new System.Windows.Forms.Label();
+            this.lbl_T5NewSavingsBalance = new System.Windows.Forms.Label();
+            this.btn_Transfer5OK = new System.Windows.Forms.Button();
             this.pnl_StartScreen.SuspendLayout();
             this.pnl_PinScreen.SuspendLayout();
             this.pnl_ActionScreen.SuspendLayout();
@@ -74,6 +106,13 @@
             this.pnl_ConfirmWD.SuspendLayout();
             this.pnl_WDReceipt.SuspendLayout();
             this.pnl_ContinueBankingPrompt.SuspendLayout();
+            this.pnl_AccountBalance1.SuspendLayout();
+            this.pnl_AccountBalance2.SuspendLayout();
+            this.pnl_Transfers1.SuspendLayout();
+            this.pnl_Transfers2.SuspendLayout();
+            this.pnl_Transfers3.SuspendLayout();
+            this.pnl_Transfers4.SuspendLayout();
+            this.pnl_Transfers5.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Title
@@ -233,6 +272,7 @@
             this.btn_Transfers.TabIndex = 3;
             this.btn_Transfers.Text = "Tranfers";
             this.btn_Transfers.UseVisualStyleBackColor = true;
+            this.btn_Transfers.Click += new System.EventHandler(this.btn_Transfers_Click);
             // 
             // btn_AccountBalance
             // 
@@ -242,6 +282,7 @@
             this.btn_AccountBalance.TabIndex = 2;
             this.btn_AccountBalance.Text = "Account Balance";
             this.btn_AccountBalance.UseVisualStyleBackColor = true;
+            this.btn_AccountBalance.Click += new System.EventHandler(this.btn_AccountBalance_Click);
             // 
             // btn_Deposit
             // 
@@ -387,7 +428,7 @@
             // 
             // btn_WDBack
             // 
-            this.btn_WDBack.Location = new System.Drawing.Point(249, 219);
+            this.btn_WDBack.Location = new System.Drawing.Point(249, 190);
             this.btn_WDBack.Name = "btn_WDBack";
             this.btn_WDBack.Size = new System.Drawing.Size(75, 23);
             this.btn_WDBack.TabIndex = 5;
@@ -396,7 +437,7 @@
             // 
             // btn_WDConfirm
             // 
-            this.btn_WDConfirm.Location = new System.Drawing.Point(249, 190);
+            this.btn_WDConfirm.Location = new System.Drawing.Point(249, 161);
             this.btn_WDConfirm.Name = "btn_WDConfirm";
             this.btn_WDConfirm.Size = new System.Drawing.Size(75, 23);
             this.btn_WDConfirm.TabIndex = 4;
@@ -407,7 +448,7 @@
             // lbl_WDConfirmText
             // 
             this.lbl_WDConfirmText.AutoSize = true;
-            this.lbl_WDConfirmText.Location = new System.Drawing.Point(214, 131);
+            this.lbl_WDConfirmText.Location = new System.Drawing.Point(214, 121);
             this.lbl_WDConfirmText.Name = "lbl_WDConfirmText";
             this.lbl_WDConfirmText.Size = new System.Drawing.Size(31, 13);
             this.lbl_WDConfirmText.TabIndex = 1;
@@ -499,11 +540,329 @@
             this.lbl_ContinueBanking.TabIndex = 0;
             this.lbl_ContinueBanking.Text = "Would you like to continue banking?";
             // 
+            // pnl_AccountBalance1
+            // 
+            this.pnl_AccountBalance1.Controls.Add(this.btn_ViewBalanceSavings);
+            this.pnl_AccountBalance1.Controls.Add(this.btn_ViewBalanceChequing);
+            this.pnl_AccountBalance1.Controls.Add(this.label2);
+            this.pnl_AccountBalance1.Location = new System.Drawing.Point(12, 1193);
+            this.pnl_AccountBalance1.Name = "pnl_AccountBalance1";
+            this.pnl_AccountBalance1.Size = new System.Drawing.Size(602, 289);
+            this.pnl_AccountBalance1.TabIndex = 14;
+            // 
+            // pnl_AccountBalance2
+            // 
+            this.pnl_AccountBalance2.Controls.Add(this.lbl_VBOK);
+            this.pnl_AccountBalance2.Controls.Add(this.lbl_VBAccountType);
+            this.pnl_AccountBalance2.Controls.Add(this.lbl_VBAccountBalance);
+            this.pnl_AccountBalance2.Location = new System.Drawing.Point(621, 1193);
+            this.pnl_AccountBalance2.Name = "pnl_AccountBalance2";
+            this.pnl_AccountBalance2.Size = new System.Drawing.Size(602, 289);
+            this.pnl_AccountBalance2.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(219, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Select An Account to View Balance:";
+            // 
+            // btn_ViewBalanceChequing
+            // 
+            this.btn_ViewBalanceChequing.Location = new System.Drawing.Point(272, 108);
+            this.btn_ViewBalanceChequing.Name = "btn_ViewBalanceChequing";
+            this.btn_ViewBalanceChequing.Size = new System.Drawing.Size(75, 23);
+            this.btn_ViewBalanceChequing.TabIndex = 1;
+            this.btn_ViewBalanceChequing.Text = "Chequing";
+            this.btn_ViewBalanceChequing.UseVisualStyleBackColor = true;
+            this.btn_ViewBalanceChequing.Click += new System.EventHandler(this.btn_ViewBalanceChequing_Click);
+            // 
+            // btn_ViewBalanceSavings
+            // 
+            this.btn_ViewBalanceSavings.Location = new System.Drawing.Point(272, 137);
+            this.btn_ViewBalanceSavings.Name = "btn_ViewBalanceSavings";
+            this.btn_ViewBalanceSavings.Size = new System.Drawing.Size(75, 23);
+            this.btn_ViewBalanceSavings.TabIndex = 2;
+            this.btn_ViewBalanceSavings.Text = "Savings";
+            this.btn_ViewBalanceSavings.UseVisualStyleBackColor = true;
+            this.btn_ViewBalanceSavings.Click += new System.EventHandler(this.btn_ViewBalanceSavings_Click);
+            // 
+            // lbl_VBAccountBalance
+            // 
+            this.lbl_VBAccountBalance.AutoSize = true;
+            this.lbl_VBAccountBalance.Location = new System.Drawing.Point(224, 121);
+            this.lbl_VBAccountBalance.Name = "lbl_VBAccountBalance";
+            this.lbl_VBAccountBalance.Size = new System.Drawing.Size(92, 13);
+            this.lbl_VBAccountBalance.TabIndex = 0;
+            this.lbl_VBAccountBalance.Text = "Account_Balance";
+            // 
+            // lbl_VBAccountType
+            // 
+            this.lbl_VBAccountType.AutoSize = true;
+            this.lbl_VBAccountType.Location = new System.Drawing.Point(224, 108);
+            this.lbl_VBAccountType.Name = "lbl_VBAccountType";
+            this.lbl_VBAccountType.Size = new System.Drawing.Size(77, 13);
+            this.lbl_VBAccountType.TabIndex = 1;
+            this.lbl_VBAccountType.Text = "Account_Type";
+            // 
+            // lbl_VBOK
+            // 
+            this.lbl_VBOK.Location = new System.Drawing.Point(227, 166);
+            this.lbl_VBOK.Name = "lbl_VBOK";
+            this.lbl_VBOK.Size = new System.Drawing.Size(75, 23);
+            this.lbl_VBOK.TabIndex = 2;
+            this.lbl_VBOK.Text = "OK";
+            this.lbl_VBOK.UseVisualStyleBackColor = true;
+            this.lbl_VBOK.Click += new System.EventHandler(this.lbl_VBOK_Click);
+            // 
+            // pnl_Transfers1
+            // 
+            this.pnl_Transfers1.Controls.Add(this.btn_Transfer1Savings);
+            this.pnl_Transfers1.Controls.Add(this.btn_Transfer1Chequing);
+            this.pnl_Transfers1.Controls.Add(this.lbl_Transfers1);
+            this.pnl_Transfers1.Location = new System.Drawing.Point(12, 1488);
+            this.pnl_Transfers1.Name = "pnl_Transfers1";
+            this.pnl_Transfers1.Size = new System.Drawing.Size(602, 289);
+            this.pnl_Transfers1.TabIndex = 16;
+            // 
+            // pnl_Transfers2
+            // 
+            this.pnl_Transfers2.Controls.Add(this.btn_Transfer2Savings);
+            this.pnl_Transfers2.Controls.Add(this.btn_Transfer2Chequing);
+            this.pnl_Transfers2.Controls.Add(this.lbl_Transfers2);
+            this.pnl_Transfers2.Location = new System.Drawing.Point(621, 1488);
+            this.pnl_Transfers2.Name = "pnl_Transfers2";
+            this.pnl_Transfers2.Size = new System.Drawing.Size(602, 289);
+            this.pnl_Transfers2.TabIndex = 17;
+            // 
+            // pnl_Transfers3
+            // 
+            this.pnl_Transfers3.Controls.Add(this.lbl_Transfer3Error);
+            this.pnl_Transfers3.Controls.Add(this.btn_Transfer3Back);
+            this.pnl_Transfers3.Controls.Add(this.btn_Transfer3OK);
+            this.pnl_Transfers3.Controls.Add(this.tb_TransferAmount);
+            this.pnl_Transfers3.Controls.Add(this.lbl_Transfer3);
+            this.pnl_Transfers3.Location = new System.Drawing.Point(1229, 1488);
+            this.pnl_Transfers3.Name = "pnl_Transfers3";
+            this.pnl_Transfers3.Size = new System.Drawing.Size(602, 289);
+            this.pnl_Transfers3.TabIndex = 18;
+            // 
+            // pnl_Transfers4
+            // 
+            this.pnl_Transfers4.Controls.Add(this.btn_Transfer4Back);
+            this.pnl_Transfers4.Controls.Add(this.btn_Transfer4Yes);
+            this.pnl_Transfers4.Controls.Add(this.lbl_Transfer4);
+            this.pnl_Transfers4.Controls.Add(this.lbl_Transfer4Title);
+            this.pnl_Transfers4.Location = new System.Drawing.Point(1229, 1193);
+            this.pnl_Transfers4.Name = "pnl_Transfers4";
+            this.pnl_Transfers4.Size = new System.Drawing.Size(602, 289);
+            this.pnl_Transfers4.TabIndex = 19;
+            // 
+            // lbl_Transfers1
+            // 
+            this.lbl_Transfers1.AutoSize = true;
+            this.lbl_Transfers1.Location = new System.Drawing.Point(228, 72);
+            this.lbl_Transfers1.Name = "lbl_Transfers1";
+            this.lbl_Transfers1.Size = new System.Drawing.Size(170, 13);
+            this.lbl_Transfers1.TabIndex = 0;
+            this.lbl_Transfers1.Text = "Select an account to transfer from:";
+            // 
+            // btn_Transfer1Chequing
+            // 
+            this.btn_Transfer1Chequing.Location = new System.Drawing.Point(272, 120);
+            this.btn_Transfer1Chequing.Name = "btn_Transfer1Chequing";
+            this.btn_Transfer1Chequing.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer1Chequing.TabIndex = 1;
+            this.btn_Transfer1Chequing.Text = "Chequing";
+            this.btn_Transfer1Chequing.UseVisualStyleBackColor = true;
+            this.btn_Transfer1Chequing.Click += new System.EventHandler(this.btn_Transfer1Chequing_Click);
+            // 
+            // btn_Transfer1Savings
+            // 
+            this.btn_Transfer1Savings.Location = new System.Drawing.Point(272, 149);
+            this.btn_Transfer1Savings.Name = "btn_Transfer1Savings";
+            this.btn_Transfer1Savings.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer1Savings.TabIndex = 2;
+            this.btn_Transfer1Savings.Text = "Savings";
+            this.btn_Transfer1Savings.UseVisualStyleBackColor = true;
+            this.btn_Transfer1Savings.Click += new System.EventHandler(this.btn_Transfer1Savings_Click);
+            // 
+            // lbl_Transfers2
+            // 
+            this.lbl_Transfers2.AutoSize = true;
+            this.lbl_Transfers2.Location = new System.Drawing.Point(194, 72);
+            this.lbl_Transfers2.Name = "lbl_Transfers2";
+            this.lbl_Transfers2.Size = new System.Drawing.Size(159, 13);
+            this.lbl_Transfers2.TabIndex = 0;
+            this.lbl_Transfers2.Text = "Select an account to transfer to:";
+            // 
+            // btn_Transfer2Chequing
+            // 
+            this.btn_Transfer2Chequing.Location = new System.Drawing.Point(236, 103);
+            this.btn_Transfer2Chequing.Name = "btn_Transfer2Chequing";
+            this.btn_Transfer2Chequing.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer2Chequing.TabIndex = 1;
+            this.btn_Transfer2Chequing.Text = "Chequing";
+            this.btn_Transfer2Chequing.UseVisualStyleBackColor = true;
+            this.btn_Transfer2Chequing.Click += new System.EventHandler(this.btn_Transfer2Chequing_Click);
+            // 
+            // btn_Transfer2Savings
+            // 
+            this.btn_Transfer2Savings.Location = new System.Drawing.Point(236, 132);
+            this.btn_Transfer2Savings.Name = "btn_Transfer2Savings";
+            this.btn_Transfer2Savings.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer2Savings.TabIndex = 2;
+            this.btn_Transfer2Savings.Text = "Savings";
+            this.btn_Transfer2Savings.UseVisualStyleBackColor = true;
+            this.btn_Transfer2Savings.Click += new System.EventHandler(this.btn_Transfer2Savings_Click);
+            // 
+            // lbl_Transfer3
+            // 
+            this.lbl_Transfer3.AutoSize = true;
+            this.lbl_Transfer3.Location = new System.Drawing.Point(205, 72);
+            this.lbl_Transfer3.Name = "lbl_Transfer3";
+            this.lbl_Transfer3.Size = new System.Drawing.Size(214, 13);
+            this.lbl_Transfer3.TabIndex = 0;
+            this.lbl_Transfer3.Text = "Select the amount to transfer from __ to ___";
+            // 
+            // tb_TransferAmount
+            // 
+            this.tb_TransferAmount.Location = new System.Drawing.Point(234, 103);
+            this.tb_TransferAmount.Name = "tb_TransferAmount";
+            this.tb_TransferAmount.Size = new System.Drawing.Size(129, 20);
+            this.tb_TransferAmount.TabIndex = 1;
+            // 
+            // btn_Transfer3OK
+            // 
+            this.btn_Transfer3OK.Location = new System.Drawing.Point(259, 149);
+            this.btn_Transfer3OK.Name = "btn_Transfer3OK";
+            this.btn_Transfer3OK.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer3OK.TabIndex = 2;
+            this.btn_Transfer3OK.Text = "OK";
+            this.btn_Transfer3OK.UseVisualStyleBackColor = true;
+            this.btn_Transfer3OK.Click += new System.EventHandler(this.btn_Transfer3OK_Click);
+            // 
+            // btn_Transfer3Back
+            // 
+            this.btn_Transfer3Back.Location = new System.Drawing.Point(259, 178);
+            this.btn_Transfer3Back.Name = "btn_Transfer3Back";
+            this.btn_Transfer3Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer3Back.TabIndex = 3;
+            this.btn_Transfer3Back.Text = "Back";
+            this.btn_Transfer3Back.UseVisualStyleBackColor = true;
+            this.btn_Transfer3Back.Click += new System.EventHandler(this.btn_Transfer3Back_Click);
+            // 
+            // lbl_Transfer3Error
+            // 
+            this.lbl_Transfer3Error.AutoSize = true;
+            this.lbl_Transfer3Error.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Transfer3Error.Location = new System.Drawing.Point(231, 130);
+            this.lbl_Transfer3Error.Name = "lbl_Transfer3Error";
+            this.lbl_Transfer3Error.Size = new System.Drawing.Size(56, 13);
+            this.lbl_Transfer3Error.TabIndex = 4;
+            this.lbl_Transfer3Error.Text = "Error_Text";
+            this.lbl_Transfer3Error.Visible = false;
+            // 
+            // lbl_Transfer4Title
+            // 
+            this.lbl_Transfer4Title.AutoSize = true;
+            this.lbl_Transfer4Title.Location = new System.Drawing.Point(256, 62);
+            this.lbl_Transfer4Title.Name = "lbl_Transfer4Title";
+            this.lbl_Transfer4Title.Size = new System.Drawing.Size(107, 13);
+            this.lbl_Transfer4Title.TabIndex = 0;
+            this.lbl_Transfer4Title.Text = "Transfer Confirmation";
+            // 
+            // lbl_Transfer4
+            // 
+            this.lbl_Transfer4.AutoSize = true;
+            this.lbl_Transfer4.Location = new System.Drawing.Point(231, 108);
+            this.lbl_Transfer4.Name = "lbl_Transfer4";
+            this.lbl_Transfer4.Size = new System.Drawing.Size(150, 13);
+            this.lbl_Transfer4.TabIndex = 1;
+            this.lbl_Transfer4.Text = "Transfer $__ from ___ to ___?";
+            // 
+            // btn_Transfer4Yes
+            // 
+            this.btn_Transfer4Yes.Location = new System.Drawing.Point(259, 137);
+            this.btn_Transfer4Yes.Name = "btn_Transfer4Yes";
+            this.btn_Transfer4Yes.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer4Yes.TabIndex = 2;
+            this.btn_Transfer4Yes.Text = "Yes";
+            this.btn_Transfer4Yes.UseVisualStyleBackColor = true;
+            this.btn_Transfer4Yes.Click += new System.EventHandler(this.btn_Transfer4Yes_Click);
+            // 
+            // btn_Transfer4Back
+            // 
+            this.btn_Transfer4Back.Location = new System.Drawing.Point(259, 166);
+            this.btn_Transfer4Back.Name = "btn_Transfer4Back";
+            this.btn_Transfer4Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer4Back.TabIndex = 3;
+            this.btn_Transfer4Back.Text = "Back";
+            this.btn_Transfer4Back.UseVisualStyleBackColor = true;
+            this.btn_Transfer4Back.Click += new System.EventHandler(this.btn_Transfer4Back_Click);
+            // 
+            // pnl_Transfers5
+            // 
+            this.pnl_Transfers5.Controls.Add(this.btn_Transfer5OK);
+            this.pnl_Transfers5.Controls.Add(this.lbl_T5NewSavingsBalance);
+            this.pnl_Transfers5.Controls.Add(this.lbl_T5NewChequingBalance);
+            this.pnl_Transfers5.Controls.Add(this.lbl_TransferSuccess);
+            this.pnl_Transfers5.Location = new System.Drawing.Point(1229, 898);
+            this.pnl_Transfers5.Name = "pnl_Transfers5";
+            this.pnl_Transfers5.Size = new System.Drawing.Size(602, 289);
+            this.pnl_Transfers5.TabIndex = 20;
+            // 
+            // lbl_TransferSuccess
+            // 
+            this.lbl_TransferSuccess.AutoSize = true;
+            this.lbl_TransferSuccess.Location = new System.Drawing.Point(246, 53);
+            this.lbl_TransferSuccess.Name = "lbl_TransferSuccess";
+            this.lbl_TransferSuccess.Size = new System.Drawing.Size(101, 13);
+            this.lbl_TransferSuccess.TabIndex = 0;
+            this.lbl_TransferSuccess.Text = "Transfer Successful";
+            // 
+            // lbl_T5NewChequingBalance
+            // 
+            this.lbl_T5NewChequingBalance.AutoSize = true;
+            this.lbl_T5NewChequingBalance.Location = new System.Drawing.Point(222, 100);
+            this.lbl_T5NewChequingBalance.Name = "lbl_T5NewChequingBalance";
+            this.lbl_T5NewChequingBalance.Size = new System.Drawing.Size(143, 13);
+            this.lbl_T5NewChequingBalance.TabIndex = 1;
+            this.lbl_T5NewChequingBalance.Text = "New Chequing Balance: $__";
+            // 
+            // lbl_T5NewSavingsBalance
+            // 
+            this.lbl_T5NewSavingsBalance.AutoSize = true;
+            this.lbl_T5NewSavingsBalance.Location = new System.Drawing.Point(222, 129);
+            this.lbl_T5NewSavingsBalance.Name = "lbl_T5NewSavingsBalance";
+            this.lbl_T5NewSavingsBalance.Size = new System.Drawing.Size(136, 13);
+            this.lbl_T5NewSavingsBalance.TabIndex = 2;
+            this.lbl_T5NewSavingsBalance.Text = "New Savings Balance: $__";
+            // 
+            // btn_Transfer5OK
+            // 
+            this.btn_Transfer5OK.Location = new System.Drawing.Point(259, 192);
+            this.btn_Transfer5OK.Name = "btn_Transfer5OK";
+            this.btn_Transfer5OK.Size = new System.Drawing.Size(75, 23);
+            this.btn_Transfer5OK.TabIndex = 3;
+            this.btn_Transfer5OK.Text = "OK";
+            this.btn_Transfer5OK.UseVisualStyleBackColor = true;
+            this.btn_Transfer5OK.Click += new System.EventHandler(this.btn_Transfer5OK_Click);
+            // 
             // PrimaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 1700);
+            this.ClientSize = new System.Drawing.Size(2145, 1947);
+            this.Controls.Add(this.pnl_Transfers5);
+            this.Controls.Add(this.pnl_Transfers4);
+            this.Controls.Add(this.pnl_Transfers3);
+            this.Controls.Add(this.pnl_Transfers2);
+            this.Controls.Add(this.pnl_Transfers1);
+            this.Controls.Add(this.pnl_AccountBalance2);
+            this.Controls.Add(this.pnl_AccountBalance1);
             this.Controls.Add(this.pnl_ContinueBankingPrompt);
             this.Controls.Add(this.pnl_WDReceipt);
             this.Controls.Add(this.pnl_ConfirmWD);
@@ -513,7 +872,7 @@
             this.Controls.Add(this.pnl_StartScreen);
             this.Controls.Add(this.pnl_PinScreen);
             this.Name = "PrimaryForm";
-            this.Text = "Screen 1";
+            this.Text = "Bank of Joseph Terminal";
             this.pnl_StartScreen.ResumeLayout(false);
             this.pnl_StartScreen.PerformLayout();
             this.pnl_PinScreen.ResumeLayout(false);
@@ -529,6 +888,20 @@
             this.pnl_WDReceipt.PerformLayout();
             this.pnl_ContinueBankingPrompt.ResumeLayout(false);
             this.pnl_ContinueBankingPrompt.PerformLayout();
+            this.pnl_AccountBalance1.ResumeLayout(false);
+            this.pnl_AccountBalance1.PerformLayout();
+            this.pnl_AccountBalance2.ResumeLayout(false);
+            this.pnl_AccountBalance2.PerformLayout();
+            this.pnl_Transfers1.ResumeLayout(false);
+            this.pnl_Transfers1.PerformLayout();
+            this.pnl_Transfers2.ResumeLayout(false);
+            this.pnl_Transfers2.PerformLayout();
+            this.pnl_Transfers3.ResumeLayout(false);
+            this.pnl_Transfers3.PerformLayout();
+            this.pnl_Transfers4.ResumeLayout(false);
+            this.pnl_Transfers4.PerformLayout();
+            this.pnl_Transfers5.ResumeLayout(false);
+            this.pnl_Transfers5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -578,6 +951,38 @@
         private System.Windows.Forms.Label lbl_AccountNumberError;
         private System.Windows.Forms.Label lbl_PinError;
         private System.Windows.Forms.Label lbl_NewBalance;
+        private System.Windows.Forms.Panel pnl_AccountBalance1;
+        private System.Windows.Forms.Panel pnl_AccountBalance2;
+        private System.Windows.Forms.Button btn_ViewBalanceSavings;
+        private System.Windows.Forms.Button btn_ViewBalanceChequing;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button lbl_VBOK;
+        private System.Windows.Forms.Label lbl_VBAccountType;
+        private System.Windows.Forms.Label lbl_VBAccountBalance;
+        private System.Windows.Forms.Panel pnl_Transfers1;
+        private System.Windows.Forms.Panel pnl_Transfers2;
+        private System.Windows.Forms.Button btn_Transfer1Savings;
+        private System.Windows.Forms.Button btn_Transfer1Chequing;
+        private System.Windows.Forms.Label lbl_Transfers1;
+        private System.Windows.Forms.Button btn_Transfer2Savings;
+        private System.Windows.Forms.Button btn_Transfer2Chequing;
+        private System.Windows.Forms.Label lbl_Transfers2;
+        private System.Windows.Forms.Panel pnl_Transfers3;
+        private System.Windows.Forms.Panel pnl_Transfers4;
+        private System.Windows.Forms.Button btn_Transfer3Back;
+        private System.Windows.Forms.Button btn_Transfer3OK;
+        private System.Windows.Forms.TextBox tb_TransferAmount;
+        private System.Windows.Forms.Label lbl_Transfer3;
+        private System.Windows.Forms.Label lbl_Transfer3Error;
+        private System.Windows.Forms.Button btn_Transfer4Back;
+        private System.Windows.Forms.Button btn_Transfer4Yes;
+        private System.Windows.Forms.Label lbl_Transfer4;
+        private System.Windows.Forms.Label lbl_Transfer4Title;
+        private System.Windows.Forms.Panel pnl_Transfers5;
+        private System.Windows.Forms.Button btn_Transfer5OK;
+        private System.Windows.Forms.Label lbl_T5NewSavingsBalance;
+        private System.Windows.Forms.Label lbl_T5NewChequingBalance;
+        private System.Windows.Forms.Label lbl_TransferSuccess;
     }
 }
 

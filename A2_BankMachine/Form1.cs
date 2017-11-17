@@ -21,6 +21,10 @@ namespace A2_BankMachine {
         private string actionTypeSelected; // To note withdrawal or deposit selection
         private string accountTypeSelected; // To note whether savings or chequings has been seleceted
 
+        private string transferFromAccountType;
+        private string transferToAccountType;
+        private double transferAmount;
+
         string ToOrFrom;
 
         public PrimaryForm() {
@@ -56,6 +60,27 @@ namespace A2_BankMachine {
                 case "ContinueBankingPrompt":
                     pnl_ContinueBankingPrompt.Location = new System.Drawing.Point(12, 12);
                     break;
+                case "AccountBalance1":
+                    pnl_AccountBalance1.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "AccountBalance2":
+                    pnl_AccountBalance2.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "Transfers1":
+                    pnl_Transfers1.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "Transfers2":
+                    pnl_Transfers2.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "Transfers3":
+                    pnl_Transfers3.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "Transfers4":
+                    pnl_Transfers4.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "Transfers5":
+                    pnl_Transfers5.Location = new System.Drawing.Point(12, 12);
+                    break;
                 default:
                     break;
             }
@@ -71,6 +96,13 @@ namespace A2_BankMachine {
             pnl_ConfirmWD.Location = new System.Drawing.Point(999, 999);
             pnl_WDReceipt.Location = new System.Drawing.Point(999, 999);
             pnl_ContinueBankingPrompt.Location = new System.Drawing.Point(999, 999);
+            pnl_AccountBalance1.Location = new System.Drawing.Point(999, 999);
+            pnl_AccountBalance2.Location = new System.Drawing.Point(999, 999);
+            pnl_Transfers1.Location = new System.Drawing.Point(999, 999);
+            pnl_Transfers2.Location = new System.Drawing.Point(999, 999);
+            pnl_Transfers3.Location = new System.Drawing.Point(999, 999);
+            pnl_Transfers4.Location = new System.Drawing.Point(999, 999);
+            pnl_Transfers5.Location = new System.Drawing.Point(999, 999);
         }
 
         private void btn_TapCard_Click(object sender, EventArgs e) {
@@ -88,6 +120,7 @@ namespace A2_BankMachine {
             }
             else {
                 lbl_AccountNumberError.Visible = false;
+                tb_PinEntry.Text = "";
                 ActivateScreen("Pin");
             }
             
@@ -198,9 +231,106 @@ namespace A2_BankMachine {
         }
 
         private void btn_ContinueLogout_Click(object sender, EventArgs e) {
+            tb_AccountNumEntry.Text = "";
             ActivateScreen("Start");
         }
 
+        private void btn_AccountBalance_Click(object sender, EventArgs e) {
+            ActivateScreen("AccountBalance1");
+
+        }
+
+        private void btn_ViewBalanceChequing_Click(object sender, EventArgs e) {
+            accountTypeSelected = "Chequing";
+            lbl_VBAccountType.Text = "Chequing Account Balance:";
+            lbl_VBAccountBalance.Text = "$" + chequingBalance;
+            ActivateScreen("AccountBalance2");
+        }
+
+        private void btn_ViewBalanceSavings_Click(object sender, EventArgs e) {
+            accountTypeSelected = "Savings";
+            lbl_VBAccountType.Text = "Savings Account Balance:";
+            lbl_VBAccountBalance.Text = "$" + savingsBalance;
+            ActivateScreen("AccountBalance2");
+        }
+
+        private void lbl_VBOK_Click(object sender, EventArgs e) {
+            ActivateScreen("ContinueBankingPrompt");
+        }
+
+        private void btn_Transfer1Chequing_Click(object sender, EventArgs e) {
+            transferFromAccountType = "Chequing";
+            ActivateScreen("Transfers2");
+        }
+
+        private void btn_Transfer1Savings_Click(object sender, EventArgs e) {
+            transferFromAccountType = "Savings";
+            ActivateScreen("Transfers2");
+        }
+
+        private void btn_Transfer2Chequing_Click(object sender, EventArgs e) {
+            transferToAccountType = "Chequing";
+            lbl_Transfer3.Text = "Enter the amount to transfer from " + transferFromAccountType + " to " + transferToAccountType;
+            ActivateScreen("Transfers3");
+        }
+
+        private void btn_Transfer2Savings_Click(object sender, EventArgs e) {
+            transferToAccountType = "Savings";
+            lbl_Transfer3.Text = "Enter the amount to transfer from " + transferFromAccountType + " to " + transferToAccountType;
+            ActivateScreen("Transfers3");
+        }
+
+        private void btn_Transfer3OK_Click(object sender, EventArgs e) {
+            double fromAccountBalance = 0;
+
+            if (transferFromAccountType == "Chequing") { fromAccountBalance = chequingBalance; }
+            else if (transferFromAccountType == "Savings") { fromAccountBalance = savingsBalance; }
+
+            if (!Double.TryParse(tb_TransferAmount.Text, out transferAmount)) {
+                lbl_Transfer3Error.Text = "Error: Transfer amount must be a number";
+                lbl_Transfer3Error.Visible = true;
+            }
+            else if (transferAmount > fromAccountBalance) {
+                lbl_Transfer3Error.Text = "Error: Insufficient funds";
+                lbl_Transfer3Error.Visible = true;
+            }
+            else { // No issues
+                lbl_Transfer3Error.Visible = false;
+
+                lbl_Transfer4.Text = "Transfer " + transferAmount + " from " + transferFromAccountType + " to " + transferToAccountType + "?";
+
+                ActivateScreen("Transfers4");
+            }
+        }
+
+        private void btn_Transfer4Yes_Click(object sender, EventArgs e) {
+            if (transferFromAccountType == "Chequing") { chequingBalance -= transferAmount; }
+            else if (transferFromAccountType == "Savings") { savingsBalance -= transferAmount; }
+
+            if (transferToAccountType == "Chequing") { chequingBalance += transferAmount; }
+            else if (transferToAccountType == "Savings") { savingsBalance += transferAmount; }
+
+            lbl_T5NewChequingBalance.Text = "New Chequing Account Balance: " + chequingBalance;
+            lbl_T5NewSavingsBalance.Text = "New Savings Account Balance: " + savingsBalance;
+
+            ActivateScreen("Transfers5");
+        }
+
+        private void btn_Transfer5OK_Click(object sender, EventArgs e) {
+            ActivateScreen("ContinueBankingPrompt");
+        }
+
+        private void btn_Transfer3Back_Click(object sender, EventArgs e) {
+            ActivateScreen("Transfers2");
+        }
+
+        private void btn_Transfer4Back_Click(object sender, EventArgs e) {
+            ActivateScreen("Transfers3");
+        }
+
+        private void btn_Transfers_Click(object sender, EventArgs e) {
+            ActivateScreen("Transfers1");
+        }
     }
 
 }
