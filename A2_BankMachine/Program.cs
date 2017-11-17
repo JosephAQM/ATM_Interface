@@ -13,7 +13,7 @@ namespace A2_BankMachine {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Screen_1());
+            Application.Run(new PrimaryForm());
         }
     }
 }

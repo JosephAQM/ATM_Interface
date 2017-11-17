@@ -1,3 +1,14 @@
 d:\hdd libraries\documents\visual studio 2015\Projects\A2_BankMachine\A2_BankMachine\bin\Debug\A2_BankMachine.exe.config
 C:\Dev\4HC3_A2\A2_BankMachine\bin\Debug\A2_BankMachine.exe.config
+<<<<<<< HEAD
 C:\Users\Sydney\Documents\FOURTH_YEAR\4HC3\4HC3_A2\A2_BankMachine\bin\Debug\A2_BankMachine.exe.config
+=======
+C:\Dev\4HC3_A2\A2_BankMachine\bin\Debug\A2_BankMachine.exe
+C:\Dev\4HC3_A2\A2_BankMachine\bin\Debug\A2_BankMachine.pdb
+C:\Dev\4HC3_A2\A2_BankMachine\obj\Debug\A2_BankMachine.csprojResolveAssemblyReference.cache
+C:\Dev\4HC3_A2\A2_BankMachine\obj\Debug\A2_BankMachine.Properties.Resources.resources
+C:\Dev\4HC3_A2\A2_BankMachine\obj\Debug\A2_BankMachine.csproj.GenerateResource.Cache
+C:\Dev\4HC3_A2\A2_BankMachine\obj\Debug\A2_BankMachine.exe
+C:\Dev\4HC3_A2\A2_BankMachine\obj\Debug\A2_BankMachine.pdb
+C:\Dev\4HC3_A2\A2_BankMachine\obj\Debug\A2_BankMachine.PrimaryForm.resources
+>>>>>>> 1718f943570a3a6371b55b5274d17f2446f83323
