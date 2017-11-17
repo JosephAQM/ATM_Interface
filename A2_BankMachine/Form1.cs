@@ -9,13 +9,59 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace A2_BankMachine {
-    public partial class Screen_1 : Form {
-        public Screen_1() {
+
+    public partial class PrimaryForm : Form {
+
+        private string accountNumber;
+        private float actionAmount; 
+
+        public PrimaryForm() {
             InitializeComponent();
+            this.Size = new System.Drawing.Size(700,400);
         }
 
-        private void label1_Click(object sender, EventArgs e) {
+        public void ActivateScreen(string screenSelect) {
+            HideAllScreens();
 
+            switch (screenSelect) {
+                case "Start":
+                    pnl_StartScreen.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "Pin":
+                    pnl_PinScreen.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "Action":
+                    pnl_ActionScreen.Location = new System.Drawing.Point(12, 12);
+                    break;
+                case "Withdraw1":
+                    pnl_Withdraw1.Location = new System.Drawing.Point(12, 12);
+                    break;
+                default:
+                    break;
+            }
         }
+
+        
+        public void HideAllScreens() {
+            pnl_StartScreen.Location = new System.Drawing.Point(999, 999);
+            pnl_PinScreen.Location = new System.Drawing.Point(999, 999);
+            pnl_ActionScreen.Location = new System.Drawing.Point(999, 999);
+            pnl_Withdraw1.Location = new System.Drawing.Point(999, 999);
+        }
+
+        private void btn_TapCard_Click(object sender, EventArgs e) {
+            ActivateScreen("Pin");
+        }
+
+        private void btn_SubmitAccNum_Click(object sender, EventArgs e) {
+            ActivateScreen("Pin");
+        }
+
+        private void btn_SubmitPin_Click(object sender, EventArgs e) {
+            ActivateScreen("Action");
+        }
+
     }
+
 }
+
