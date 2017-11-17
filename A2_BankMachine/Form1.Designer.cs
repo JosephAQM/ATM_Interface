@@ -29,8 +29,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_TapCard = new System.Windows.Forms.Button();
             this.pnl_StartScreen = new System.Windows.Forms.Panel();
+            this.lbl_AccountNumberError = new System.Windows.Forms.Label();
             this.btn_SubmitAccNum = new System.Windows.Forms.Button();
             this.pnl_PinScreen = new System.Windows.Forms.Panel();
+            this.lbl_PinError = new System.Windows.Forms.Label();
             this.btn_SubmitPin = new System.Windows.Forms.Button();
             this.tb_PinEntry = new System.Windows.Forms.TextBox();
             this.lbl_EnterPin = new System.Windows.Forms.Label();
@@ -40,34 +42,38 @@
             this.btn_AccountBalance = new System.Windows.Forms.Button();
             this.btn_Deposit = new System.Windows.Forms.Button();
             this.btn_Withdraw = new System.Windows.Forms.Button();
-            this.pnl_Withdraw1 = new System.Windows.Forms.Panel();
-            this.btn_WithdrawSavings = new System.Windows.Forms.Button();
-            this.btn_WithdrawChequing = new System.Windows.Forms.Button();
-            this.lbl_ChooseWithdrawAccount = new System.Windows.Forms.Label();
-            this.pnl_Withdraw2 = new System.Windows.Forms.Panel();
-            this.btn_Withdraw60 = new System.Windows.Forms.Button();
-            this.btn_Withdraw100 = new System.Windows.Forms.Button();
-            this.btn_Withdraw40 = new System.Windows.Forms.Button();
-            this.btn_Withdraw80 = new System.Windows.Forms.Button();
-            this.btn_Withdraw20 = new System.Windows.Forms.Button();
-            this.lbl_WithdrawlAmount = new System.Windows.Forms.Label();
-            this.pbl_ConfirmWithdrawal = new System.Windows.Forms.Panel();
-            this.lbl_ConfirmWithdraw = new System.Windows.Forms.Label();
-            this.lbl_WithdrawAmount = new System.Windows.Forms.Label();
-            this.lbl_From = new System.Windows.Forms.Label();
-            this.lbl_WithdrawAccountConfirm = new System.Windows.Forms.Label();
-            this.btn_WithdrawConfirm = new System.Windows.Forms.Button();
-            this.btn_WithdrawBack = new System.Windows.Forms.Button();
-            this.pnl_WithdrawReceipt = new System.Windows.Forms.Panel();
-            this.lbl_WithdrawReceipt = new System.Windows.Forms.Label();
-            this.btn_WithdrawReceiptOK = new System.Windows.Forms.Button();
+            this.pnl_WithdrawDeposit1 = new System.Windows.Forms.Panel();
+            this.btn_WDSavings = new System.Windows.Forms.Button();
+            this.btn_WDChequing = new System.Windows.Forms.Button();
+            this.lbl_ChooseWDAccount = new System.Windows.Forms.Label();
+            this.pnl_WithdrawDeposit2 = new System.Windows.Forms.Panel();
+            this.btn_WD60 = new System.Windows.Forms.Button();
+            this.btn_WD100 = new System.Windows.Forms.Button();
+            this.btn_WD40 = new System.Windows.Forms.Button();
+            this.btn_WD80 = new System.Windows.Forms.Button();
+            this.btn_WD20 = new System.Windows.Forms.Button();
+            this.lbl_WDAmount = new System.Windows.Forms.Label();
+            this.pnl_ConfirmWD = new System.Windows.Forms.Panel();
+            this.btn_WDBack = new System.Windows.Forms.Button();
+            this.btn_WDConfirm = new System.Windows.Forms.Button();
+            this.lbl_WDConfirmText = new System.Windows.Forms.Label();
+            this.lbl_ConfirmWD = new System.Windows.Forms.Label();
+            this.pnl_WDReceipt = new System.Windows.Forms.Panel();
+            this.lbl_NewBalance = new System.Windows.Forms.Label();
+            this.btn_WDReceiptOK = new System.Windows.Forms.Button();
+            this.lbl_WDReceipt = new System.Windows.Forms.Label();
+            this.pnl_ContinueBankingPrompt = new System.Windows.Forms.Panel();
+            this.btn_ContinueLogout = new System.Windows.Forms.Button();
+            this.btn_ContinueYes = new System.Windows.Forms.Button();
+            this.lbl_ContinueBanking = new System.Windows.Forms.Label();
             this.pnl_StartScreen.SuspendLayout();
             this.pnl_PinScreen.SuspendLayout();
             this.pnl_ActionScreen.SuspendLayout();
-            this.pnl_Withdraw1.SuspendLayout();
-            this.pnl_Withdraw2.SuspendLayout();
-            this.pbl_ConfirmWithdrawal.SuspendLayout();
-            this.pnl_WithdrawReceipt.SuspendLayout();
+            this.pnl_WithdrawDeposit1.SuspendLayout();
+            this.pnl_WithdrawDeposit2.SuspendLayout();
+            this.pnl_ConfirmWD.SuspendLayout();
+            this.pnl_WDReceipt.SuspendLayout();
+            this.pnl_ContinueBankingPrompt.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Title
@@ -119,6 +125,7 @@
             // 
             // pnl_StartScreen
             // 
+            this.pnl_StartScreen.Controls.Add(this.lbl_AccountNumberError);
             this.pnl_StartScreen.Controls.Add(this.btn_SubmitAccNum);
             this.pnl_StartScreen.Controls.Add(this.btn_TapCard);
             this.pnl_StartScreen.Controls.Add(this.lbl_Title);
@@ -129,6 +136,17 @@
             this.pnl_StartScreen.Name = "pnl_StartScreen";
             this.pnl_StartScreen.Size = new System.Drawing.Size(602, 289);
             this.pnl_StartScreen.TabIndex = 5;
+            // 
+            // lbl_AccountNumberError
+            // 
+            this.lbl_AccountNumberError.AutoSize = true;
+            this.lbl_AccountNumberError.ForeColor = System.Drawing.Color.Red;
+            this.lbl_AccountNumberError.Location = new System.Drawing.Point(166, 141);
+            this.lbl_AccountNumberError.Name = "lbl_AccountNumberError";
+            this.lbl_AccountNumberError.Size = new System.Drawing.Size(56, 13);
+            this.lbl_AccountNumberError.TabIndex = 5;
+            this.lbl_AccountNumberError.Text = "Error_Text";
+            this.lbl_AccountNumberError.Visible = false;
             // 
             // btn_SubmitAccNum
             // 
@@ -141,6 +159,7 @@
             // 
             // pnl_PinScreen
             // 
+            this.pnl_PinScreen.Controls.Add(this.lbl_PinError);
             this.pnl_PinScreen.Controls.Add(this.btn_SubmitPin);
             this.pnl_PinScreen.Controls.Add(this.tb_PinEntry);
             this.pnl_PinScreen.Controls.Add(this.lbl_EnterPin);
@@ -148,6 +167,17 @@
             this.pnl_PinScreen.Name = "pnl_PinScreen";
             this.pnl_PinScreen.Size = new System.Drawing.Size(602, 289);
             this.pnl_PinScreen.TabIndex = 6;
+            // 
+            // lbl_PinError
+            // 
+            this.lbl_PinError.AutoSize = true;
+            this.lbl_PinError.ForeColor = System.Drawing.Color.Red;
+            this.lbl_PinError.Location = new System.Drawing.Point(231, 126);
+            this.lbl_PinError.Name = "lbl_PinError";
+            this.lbl_PinError.Size = new System.Drawing.Size(56, 13);
+            this.lbl_PinError.TabIndex = 4;
+            this.lbl_PinError.Text = "Error_Text";
+            this.lbl_PinError.Visible = false;
             // 
             // btn_SubmitPin
             // 
@@ -221,6 +251,7 @@
             this.btn_Deposit.TabIndex = 1;
             this.btn_Deposit.Text = "Deposit";
             this.btn_Deposit.UseVisualStyleBackColor = true;
+            this.btn_Deposit.Click += new System.EventHandler(this.btn_Deposit_Click);
             // 
             // btn_Withdraw
             // 
@@ -230,214 +261,254 @@
             this.btn_Withdraw.TabIndex = 0;
             this.btn_Withdraw.Text = "Withdraw";
             this.btn_Withdraw.UseVisualStyleBackColor = true;
+            this.btn_Withdraw.Click += new System.EventHandler(this.btn_Withdraw_Click);
             // 
-            // pnl_Withdraw1
+            // pnl_WithdrawDeposit1
             // 
-            this.pnl_Withdraw1.Controls.Add(this.btn_WithdrawSavings);
-            this.pnl_Withdraw1.Controls.Add(this.btn_WithdrawChequing);
-            this.pnl_Withdraw1.Controls.Add(this.lbl_ChooseWithdrawAccount);
-            this.pnl_Withdraw1.Location = new System.Drawing.Point(621, 307);
-            this.pnl_Withdraw1.Name = "pnl_Withdraw1";
-            this.pnl_Withdraw1.Size = new System.Drawing.Size(602, 289);
-            this.pnl_Withdraw1.TabIndex = 8;
+            this.pnl_WithdrawDeposit1.Controls.Add(this.btn_WDSavings);
+            this.pnl_WithdrawDeposit1.Controls.Add(this.btn_WDChequing);
+            this.pnl_WithdrawDeposit1.Controls.Add(this.lbl_ChooseWDAccount);
+            this.pnl_WithdrawDeposit1.Location = new System.Drawing.Point(621, 307);
+            this.pnl_WithdrawDeposit1.Name = "pnl_WithdrawDeposit1";
+            this.pnl_WithdrawDeposit1.Size = new System.Drawing.Size(602, 289);
+            this.pnl_WithdrawDeposit1.TabIndex = 8;
             // 
-            // btn_WithdrawSavings
+            // btn_WDSavings
             // 
-            this.btn_WithdrawSavings.Location = new System.Drawing.Point(236, 128);
-            this.btn_WithdrawSavings.Name = "btn_WithdrawSavings";
-            this.btn_WithdrawSavings.Size = new System.Drawing.Size(75, 23);
-            this.btn_WithdrawSavings.TabIndex = 2;
-            this.btn_WithdrawSavings.Text = "Savings";
-            this.btn_WithdrawSavings.UseVisualStyleBackColor = true;
+            this.btn_WDSavings.Location = new System.Drawing.Point(236, 128);
+            this.btn_WDSavings.Name = "btn_WDSavings";
+            this.btn_WDSavings.Size = new System.Drawing.Size(75, 23);
+            this.btn_WDSavings.TabIndex = 2;
+            this.btn_WDSavings.Text = "Savings";
+            this.btn_WDSavings.UseVisualStyleBackColor = true;
+            this.btn_WDSavings.Click += new System.EventHandler(this.btn_WDSavings_Click);
             // 
-            // btn_WithdrawChequing
+            // btn_WDChequing
             // 
-            this.btn_WithdrawChequing.Location = new System.Drawing.Point(236, 98);
-            this.btn_WithdrawChequing.Name = "btn_WithdrawChequing";
-            this.btn_WithdrawChequing.Size = new System.Drawing.Size(75, 23);
-            this.btn_WithdrawChequing.TabIndex = 1;
-            this.btn_WithdrawChequing.Text = "Chequing";
-            this.btn_WithdrawChequing.UseVisualStyleBackColor = true;
+            this.btn_WDChequing.Location = new System.Drawing.Point(236, 98);
+            this.btn_WDChequing.Name = "btn_WDChequing";
+            this.btn_WDChequing.Size = new System.Drawing.Size(75, 23);
+            this.btn_WDChequing.TabIndex = 1;
+            this.btn_WDChequing.Text = "Chequing";
+            this.btn_WDChequing.UseVisualStyleBackColor = true;
+            this.btn_WDChequing.Click += new System.EventHandler(this.btn_WDChequing_Click);
             // 
-            // lbl_ChooseWithdrawAccount
+            // lbl_ChooseWDAccount
             // 
-            this.lbl_ChooseWithdrawAccount.AutoSize = true;
-            this.lbl_ChooseWithdrawAccount.Location = new System.Drawing.Point(205, 62);
-            this.lbl_ChooseWithdrawAccount.Name = "lbl_ChooseWithdrawAccount";
-            this.lbl_ChooseWithdrawAccount.Size = new System.Drawing.Size(190, 13);
-            this.lbl_ChooseWithdrawAccount.TabIndex = 0;
-            this.lbl_ChooseWithdrawAccount.Text = "Choose an Account to Withdraw From:";
+            this.lbl_ChooseWDAccount.AutoSize = true;
+            this.lbl_ChooseWDAccount.Location = new System.Drawing.Point(205, 62);
+            this.lbl_ChooseWDAccount.Name = "lbl_ChooseWDAccount";
+            this.lbl_ChooseWDAccount.Size = new System.Drawing.Size(190, 13);
+            this.lbl_ChooseWDAccount.TabIndex = 0;
+            this.lbl_ChooseWDAccount.Text = "Choose an Account to Withdraw From:";
             // 
-            // pnl_Withdraw2
+            // pnl_WithdrawDeposit2
             // 
-            this.pnl_Withdraw2.Controls.Add(this.btn_Withdraw60);
-            this.pnl_Withdraw2.Controls.Add(this.btn_Withdraw100);
-            this.pnl_Withdraw2.Controls.Add(this.btn_Withdraw40);
-            this.pnl_Withdraw2.Controls.Add(this.btn_Withdraw80);
-            this.pnl_Withdraw2.Controls.Add(this.btn_Withdraw20);
-            this.pnl_Withdraw2.Controls.Add(this.lbl_WithdrawlAmount);
-            this.pnl_Withdraw2.Location = new System.Drawing.Point(12, 603);
-            this.pnl_Withdraw2.Name = "pnl_Withdraw2";
-            this.pnl_Withdraw2.Size = new System.Drawing.Size(602, 289);
-            this.pnl_Withdraw2.TabIndex = 9;
+            this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WD60);
+            this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WD100);
+            this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WD40);
+            this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WD80);
+            this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WD20);
+            this.pnl_WithdrawDeposit2.Controls.Add(this.lbl_WDAmount);
+            this.pnl_WithdrawDeposit2.Location = new System.Drawing.Point(12, 603);
+            this.pnl_WithdrawDeposit2.Name = "pnl_WithdrawDeposit2";
+            this.pnl_WithdrawDeposit2.Size = new System.Drawing.Size(602, 289);
+            this.pnl_WithdrawDeposit2.TabIndex = 9;
             // 
-            // btn_Withdraw60
+            // btn_WD60
             // 
-            this.btn_Withdraw60.Location = new System.Drawing.Point(205, 190);
-            this.btn_Withdraw60.Name = "btn_Withdraw60";
-            this.btn_Withdraw60.Size = new System.Drawing.Size(75, 23);
-            this.btn_Withdraw60.TabIndex = 5;
-            this.btn_Withdraw60.Text = "$60";
-            this.btn_Withdraw60.UseVisualStyleBackColor = true;
+            this.btn_WD60.Location = new System.Drawing.Point(205, 190);
+            this.btn_WD60.Name = "btn_WD60";
+            this.btn_WD60.Size = new System.Drawing.Size(75, 23);
+            this.btn_WD60.TabIndex = 5;
+            this.btn_WD60.Text = "$60";
+            this.btn_WD60.UseVisualStyleBackColor = true;
+            this.btn_WD60.Click += new System.EventHandler(this.btn_WD60_Click);
             // 
-            // btn_Withdraw100
+            // btn_WD100
             // 
-            this.btn_Withdraw100.Location = new System.Drawing.Point(287, 161);
-            this.btn_Withdraw100.Name = "btn_Withdraw100";
-            this.btn_Withdraw100.Size = new System.Drawing.Size(75, 23);
-            this.btn_Withdraw100.TabIndex = 4;
-            this.btn_Withdraw100.Text = "$100";
-            this.btn_Withdraw100.UseVisualStyleBackColor = true;
+            this.btn_WD100.Location = new System.Drawing.Point(287, 161);
+            this.btn_WD100.Name = "btn_WD100";
+            this.btn_WD100.Size = new System.Drawing.Size(75, 23);
+            this.btn_WD100.TabIndex = 4;
+            this.btn_WD100.Text = "$100";
+            this.btn_WD100.UseVisualStyleBackColor = true;
+            this.btn_WD100.Click += new System.EventHandler(this.btn_WD100_Click);
             // 
-            // btn_Withdraw40
+            // btn_WD40
             // 
-            this.btn_Withdraw40.Location = new System.Drawing.Point(205, 161);
-            this.btn_Withdraw40.Name = "btn_Withdraw40";
-            this.btn_Withdraw40.Size = new System.Drawing.Size(75, 23);
-            this.btn_Withdraw40.TabIndex = 3;
-            this.btn_Withdraw40.Text = "$40";
-            this.btn_Withdraw40.UseVisualStyleBackColor = true;
+            this.btn_WD40.Location = new System.Drawing.Point(205, 161);
+            this.btn_WD40.Name = "btn_WD40";
+            this.btn_WD40.Size = new System.Drawing.Size(75, 23);
+            this.btn_WD40.TabIndex = 3;
+            this.btn_WD40.Text = "$40";
+            this.btn_WD40.UseVisualStyleBackColor = true;
+            this.btn_WD40.Click += new System.EventHandler(this.btn_WD40_Click);
             // 
-            // btn_Withdraw80
+            // btn_WD80
             // 
-            this.btn_Withdraw80.Location = new System.Drawing.Point(287, 131);
-            this.btn_Withdraw80.Name = "btn_Withdraw80";
-            this.btn_Withdraw80.Size = new System.Drawing.Size(75, 23);
-            this.btn_Withdraw80.TabIndex = 2;
-            this.btn_Withdraw80.Text = "$80";
-            this.btn_Withdraw80.UseVisualStyleBackColor = true;
+            this.btn_WD80.Location = new System.Drawing.Point(287, 131);
+            this.btn_WD80.Name = "btn_WD80";
+            this.btn_WD80.Size = new System.Drawing.Size(75, 23);
+            this.btn_WD80.TabIndex = 2;
+            this.btn_WD80.Text = "$80";
+            this.btn_WD80.UseVisualStyleBackColor = true;
+            this.btn_WD80.Click += new System.EventHandler(this.btn_WD80_Click);
             // 
-            // btn_Withdraw20
+            // btn_WD20
             // 
-            this.btn_Withdraw20.Location = new System.Drawing.Point(205, 131);
-            this.btn_Withdraw20.Name = "btn_Withdraw20";
-            this.btn_Withdraw20.Size = new System.Drawing.Size(75, 23);
-            this.btn_Withdraw20.TabIndex = 1;
-            this.btn_Withdraw20.Text = "$20";
-            this.btn_Withdraw20.UseVisualStyleBackColor = true;
+            this.btn_WD20.Location = new System.Drawing.Point(205, 131);
+            this.btn_WD20.Name = "btn_WD20";
+            this.btn_WD20.Size = new System.Drawing.Size(75, 23);
+            this.btn_WD20.TabIndex = 1;
+            this.btn_WD20.Text = "$20";
+            this.btn_WD20.UseVisualStyleBackColor = true;
+            this.btn_WD20.Click += new System.EventHandler(this.btn_WD20_Click);
             // 
-            // lbl_WithdrawlAmount
+            // lbl_WDAmount
             // 
-            this.lbl_WithdrawlAmount.AutoSize = true;
-            this.lbl_WithdrawlAmount.Location = new System.Drawing.Point(189, 58);
-            this.lbl_WithdrawlAmount.Name = "lbl_WithdrawlAmount";
-            this.lbl_WithdrawlAmount.Size = new System.Drawing.Size(257, 13);
-            this.lbl_WithdrawlAmount.TabIndex = 0;
-            this.lbl_WithdrawlAmount.Text = "How Much Would You Like to Withdraw From ____?";
+            this.lbl_WDAmount.AutoSize = true;
+            this.lbl_WDAmount.Location = new System.Drawing.Point(189, 58);
+            this.lbl_WDAmount.Name = "lbl_WDAmount";
+            this.lbl_WDAmount.Size = new System.Drawing.Size(257, 13);
+            this.lbl_WDAmount.TabIndex = 0;
+            this.lbl_WDAmount.Text = "How Much Would You Like to Withdraw From ____?";
             // 
-            // pbl_ConfirmWithdrawal
+            // pnl_ConfirmWD
             // 
-            this.pbl_ConfirmWithdrawal.Controls.Add(this.btn_WithdrawBack);
-            this.pbl_ConfirmWithdrawal.Controls.Add(this.btn_WithdrawConfirm);
-            this.pbl_ConfirmWithdrawal.Controls.Add(this.lbl_WithdrawAccountConfirm);
-            this.pbl_ConfirmWithdrawal.Controls.Add(this.lbl_From);
-            this.pbl_ConfirmWithdrawal.Controls.Add(this.lbl_WithdrawAmount);
-            this.pbl_ConfirmWithdrawal.Controls.Add(this.lbl_ConfirmWithdraw);
-            this.pbl_ConfirmWithdrawal.Location = new System.Drawing.Point(621, 603);
-            this.pbl_ConfirmWithdrawal.Name = "pbl_ConfirmWithdrawal";
-            this.pbl_ConfirmWithdrawal.Size = new System.Drawing.Size(602, 289);
-            this.pbl_ConfirmWithdrawal.TabIndex = 11;
+            this.pnl_ConfirmWD.Controls.Add(this.btn_WDBack);
+            this.pnl_ConfirmWD.Controls.Add(this.btn_WDConfirm);
+            this.pnl_ConfirmWD.Controls.Add(this.lbl_WDConfirmText);
+            this.pnl_ConfirmWD.Controls.Add(this.lbl_ConfirmWD);
+            this.pnl_ConfirmWD.Location = new System.Drawing.Point(621, 603);
+            this.pnl_ConfirmWD.Name = "pnl_ConfirmWD";
+            this.pnl_ConfirmWD.Size = new System.Drawing.Size(602, 289);
+            this.pnl_ConfirmWD.TabIndex = 11;
             // 
-            // lbl_ConfirmWithdraw
+            // btn_WDBack
             // 
-            this.lbl_ConfirmWithdraw.AutoSize = true;
-            this.lbl_ConfirmWithdraw.Location = new System.Drawing.Point(246, 49);
-            this.lbl_ConfirmWithdraw.Name = "lbl_ConfirmWithdraw";
-            this.lbl_ConfirmWithdraw.Size = new System.Drawing.Size(65, 13);
-            this.lbl_ConfirmWithdraw.TabIndex = 0;
-            this.lbl_ConfirmWithdraw.Text = "Confirmation";
+            this.btn_WDBack.Location = new System.Drawing.Point(249, 219);
+            this.btn_WDBack.Name = "btn_WDBack";
+            this.btn_WDBack.Size = new System.Drawing.Size(75, 23);
+            this.btn_WDBack.TabIndex = 5;
+            this.btn_WDBack.Text = "Back";
+            this.btn_WDBack.UseVisualStyleBackColor = true;
             // 
-            // lbl_WithdrawAmount
+            // btn_WDConfirm
             // 
-            this.lbl_WithdrawAmount.AutoSize = true;
-            this.lbl_WithdrawAmount.Location = new System.Drawing.Point(214, 131);
-            this.lbl_WithdrawAmount.Name = "lbl_WithdrawAmount";
-            this.lbl_WithdrawAmount.Size = new System.Drawing.Size(31, 13);
-            this.lbl_WithdrawAmount.TabIndex = 1;
-            this.lbl_WithdrawAmount.Text = "$___";
+            this.btn_WDConfirm.Location = new System.Drawing.Point(249, 190);
+            this.btn_WDConfirm.Name = "btn_WDConfirm";
+            this.btn_WDConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btn_WDConfirm.TabIndex = 4;
+            this.btn_WDConfirm.Text = "Confirm";
+            this.btn_WDConfirm.UseVisualStyleBackColor = true;
+            this.btn_WDConfirm.Click += new System.EventHandler(this.btn_WDConfirm_Click);
             // 
-            // lbl_From
+            // lbl_WDConfirmText
             // 
-            this.lbl_From.AutoSize = true;
-            this.lbl_From.Location = new System.Drawing.Point(265, 131);
-            this.lbl_From.Name = "lbl_From";
-            this.lbl_From.Size = new System.Drawing.Size(27, 13);
-            this.lbl_From.TabIndex = 2;
-            this.lbl_From.Text = "from";
+            this.lbl_WDConfirmText.AutoSize = true;
+            this.lbl_WDConfirmText.Location = new System.Drawing.Point(214, 131);
+            this.lbl_WDConfirmText.Name = "lbl_WDConfirmText";
+            this.lbl_WDConfirmText.Size = new System.Drawing.Size(31, 13);
+            this.lbl_WDConfirmText.TabIndex = 1;
+            this.lbl_WDConfirmText.Text = "$___";
             // 
-            // lbl_WithdrawAccountConfirm
+            // lbl_ConfirmWD
             // 
-            this.lbl_WithdrawAccountConfirm.AutoSize = true;
-            this.lbl_WithdrawAccountConfirm.Location = new System.Drawing.Point(298, 131);
-            this.lbl_WithdrawAccountConfirm.Name = "lbl_WithdrawAccountConfirm";
-            this.lbl_WithdrawAccountConfirm.Size = new System.Drawing.Size(44, 13);
-            this.lbl_WithdrawAccountConfirm.TabIndex = 3;
-            this.lbl_WithdrawAccountConfirm.Text = "Ch/Sav";
+            this.lbl_ConfirmWD.AutoSize = true;
+            this.lbl_ConfirmWD.Location = new System.Drawing.Point(246, 49);
+            this.lbl_ConfirmWD.Name = "lbl_ConfirmWD";
+            this.lbl_ConfirmWD.Size = new System.Drawing.Size(65, 13);
+            this.lbl_ConfirmWD.TabIndex = 0;
+            this.lbl_ConfirmWD.Text = "Confirmation";
             // 
-            // btn_WithdrawConfirm
+            // pnl_WDReceipt
             // 
-            this.btn_WithdrawConfirm.Location = new System.Drawing.Point(249, 190);
-            this.btn_WithdrawConfirm.Name = "btn_WithdrawConfirm";
-            this.btn_WithdrawConfirm.Size = new System.Drawing.Size(75, 23);
-            this.btn_WithdrawConfirm.TabIndex = 4;
-            this.btn_WithdrawConfirm.Text = "Confirm";
-            this.btn_WithdrawConfirm.UseVisualStyleBackColor = true;
+            this.pnl_WDReceipt.Controls.Add(this.lbl_NewBalance);
+            this.pnl_WDReceipt.Controls.Add(this.btn_WDReceiptOK);
+            this.pnl_WDReceipt.Controls.Add(this.lbl_WDReceipt);
+            this.pnl_WDReceipt.Location = new System.Drawing.Point(12, 898);
+            this.pnl_WDReceipt.Name = "pnl_WDReceipt";
+            this.pnl_WDReceipt.Size = new System.Drawing.Size(602, 289);
+            this.pnl_WDReceipt.TabIndex = 12;
             // 
-            // btn_WithdrawBack
+            // lbl_NewBalance
             // 
-            this.btn_WithdrawBack.Location = new System.Drawing.Point(249, 219);
-            this.btn_WithdrawBack.Name = "btn_WithdrawBack";
-            this.btn_WithdrawBack.Size = new System.Drawing.Size(75, 23);
-            this.btn_WithdrawBack.TabIndex = 5;
-            this.btn_WithdrawBack.Text = "Back";
-            this.btn_WithdrawBack.UseVisualStyleBackColor = true;
+            this.lbl_NewBalance.AutoSize = true;
+            this.lbl_NewBalance.Location = new System.Drawing.Point(189, 85);
+            this.lbl_NewBalance.Name = "lbl_NewBalance";
+            this.lbl_NewBalance.Size = new System.Drawing.Size(191, 13);
+            this.lbl_NewBalance.TabIndex = 2;
+            this.lbl_NewBalance.Text = "New Chequings/Savings Balance: $__";
             // 
-            // pnl_WithdrawReceipt
+            // btn_WDReceiptOK
             // 
-            this.pnl_WithdrawReceipt.Controls.Add(this.btn_WithdrawReceiptOK);
-            this.pnl_WithdrawReceipt.Controls.Add(this.lbl_WithdrawReceipt);
-            this.pnl_WithdrawReceipt.Location = new System.Drawing.Point(12, 898);
-            this.pnl_WithdrawReceipt.Name = "pnl_WithdrawReceipt";
-            this.pnl_WithdrawReceipt.Size = new System.Drawing.Size(602, 289);
-            this.pnl_WithdrawReceipt.TabIndex = 12;
+            this.btn_WDReceiptOK.Location = new System.Drawing.Point(256, 129);
+            this.btn_WDReceiptOK.Name = "btn_WDReceiptOK";
+            this.btn_WDReceiptOK.Size = new System.Drawing.Size(75, 23);
+            this.btn_WDReceiptOK.TabIndex = 1;
+            this.btn_WDReceiptOK.Text = "OK";
+            this.btn_WDReceiptOK.UseVisualStyleBackColor = true;
+            this.btn_WDReceiptOK.Click += new System.EventHandler(this.btn_WDReceiptOK_Click);
             // 
-            // lbl_WithdrawReceipt
+            // lbl_WDReceipt
             // 
-            this.lbl_WithdrawReceipt.AutoSize = true;
-            this.lbl_WithdrawReceipt.Location = new System.Drawing.Point(213, 78);
-            this.lbl_WithdrawReceipt.Name = "lbl_WithdrawReceipt";
-            this.lbl_WithdrawReceipt.Size = new System.Drawing.Size(173, 13);
-            this.lbl_WithdrawReceipt.TabIndex = 0;
-            this.lbl_WithdrawReceipt.Text = "$__ has been withdrawn from ____";
+            this.lbl_WDReceipt.AutoSize = true;
+            this.lbl_WDReceipt.Location = new System.Drawing.Point(189, 63);
+            this.lbl_WDReceipt.Name = "lbl_WDReceipt";
+            this.lbl_WDReceipt.Size = new System.Drawing.Size(238, 13);
+            this.lbl_WDReceipt.TabIndex = 0;
+            this.lbl_WDReceipt.Text = "$__ has been withdrawn/deposited from/to ____";
             // 
-            // btn_WithdrawReceiptOK
+            // pnl_ContinueBankingPrompt
             // 
-            this.btn_WithdrawReceiptOK.Location = new System.Drawing.Point(244, 130);
-            this.btn_WithdrawReceiptOK.Name = "btn_WithdrawReceiptOK";
-            this.btn_WithdrawReceiptOK.Size = new System.Drawing.Size(75, 23);
-            this.btn_WithdrawReceiptOK.TabIndex = 1;
-            this.btn_WithdrawReceiptOK.Text = "OK";
-            this.btn_WithdrawReceiptOK.UseVisualStyleBackColor = true;
+            this.pnl_ContinueBankingPrompt.Controls.Add(this.btn_ContinueLogout);
+            this.pnl_ContinueBankingPrompt.Controls.Add(this.btn_ContinueYes);
+            this.pnl_ContinueBankingPrompt.Controls.Add(this.lbl_ContinueBanking);
+            this.pnl_ContinueBankingPrompt.Location = new System.Drawing.Point(621, 898);
+            this.pnl_ContinueBankingPrompt.Name = "pnl_ContinueBankingPrompt";
+            this.pnl_ContinueBankingPrompt.Size = new System.Drawing.Size(602, 289);
+            this.pnl_ContinueBankingPrompt.TabIndex = 13;
+            // 
+            // btn_ContinueLogout
+            // 
+            this.btn_ContinueLogout.Location = new System.Drawing.Point(249, 129);
+            this.btn_ContinueLogout.Name = "btn_ContinueLogout";
+            this.btn_ContinueLogout.Size = new System.Drawing.Size(75, 23);
+            this.btn_ContinueLogout.TabIndex = 2;
+            this.btn_ContinueLogout.Text = "Logout";
+            this.btn_ContinueLogout.UseVisualStyleBackColor = true;
+            this.btn_ContinueLogout.Click += new System.EventHandler(this.btn_ContinueLogout_Click);
+            // 
+            // btn_ContinueYes
+            // 
+            this.btn_ContinueYes.Location = new System.Drawing.Point(249, 100);
+            this.btn_ContinueYes.Name = "btn_ContinueYes";
+            this.btn_ContinueYes.Size = new System.Drawing.Size(75, 23);
+            this.btn_ContinueYes.TabIndex = 1;
+            this.btn_ContinueYes.Text = "Yes";
+            this.btn_ContinueYes.UseVisualStyleBackColor = true;
+            this.btn_ContinueYes.Click += new System.EventHandler(this.btn_ContinueYes_Click);
+            // 
+            // lbl_ContinueBanking
+            // 
+            this.lbl_ContinueBanking.AutoSize = true;
+            this.lbl_ContinueBanking.Location = new System.Drawing.Point(205, 63);
+            this.lbl_ContinueBanking.Name = "lbl_ContinueBanking";
+            this.lbl_ContinueBanking.Size = new System.Drawing.Size(180, 13);
+            this.lbl_ContinueBanking.TabIndex = 0;
+            this.lbl_ContinueBanking.Text = "Would you like to continue banking?";
             // 
             // PrimaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 1366);
-            this.Controls.Add(this.pnl_WithdrawReceipt);
-            this.Controls.Add(this.pbl_ConfirmWithdrawal);
-            this.Controls.Add(this.pnl_Withdraw2);
-            this.Controls.Add(this.pnl_Withdraw1);
+            this.ClientSize = new System.Drawing.Size(1240, 1700);
+            this.Controls.Add(this.pnl_ContinueBankingPrompt);
+            this.Controls.Add(this.pnl_WDReceipt);
+            this.Controls.Add(this.pnl_ConfirmWD);
+            this.Controls.Add(this.pnl_WithdrawDeposit2);
+            this.Controls.Add(this.pnl_WithdrawDeposit1);
             this.Controls.Add(this.pnl_ActionScreen);
             this.Controls.Add(this.pnl_StartScreen);
             this.Controls.Add(this.pnl_PinScreen);
@@ -448,14 +519,16 @@
             this.pnl_PinScreen.ResumeLayout(false);
             this.pnl_PinScreen.PerformLayout();
             this.pnl_ActionScreen.ResumeLayout(false);
-            this.pnl_Withdraw1.ResumeLayout(false);
-            this.pnl_Withdraw1.PerformLayout();
-            this.pnl_Withdraw2.ResumeLayout(false);
-            this.pnl_Withdraw2.PerformLayout();
-            this.pbl_ConfirmWithdrawal.ResumeLayout(false);
-            this.pbl_ConfirmWithdrawal.PerformLayout();
-            this.pnl_WithdrawReceipt.ResumeLayout(false);
-            this.pnl_WithdrawReceipt.PerformLayout();
+            this.pnl_WithdrawDeposit1.ResumeLayout(false);
+            this.pnl_WithdrawDeposit1.PerformLayout();
+            this.pnl_WithdrawDeposit2.ResumeLayout(false);
+            this.pnl_WithdrawDeposit2.PerformLayout();
+            this.pnl_ConfirmWD.ResumeLayout(false);
+            this.pnl_ConfirmWD.PerformLayout();
+            this.pnl_WDReceipt.ResumeLayout(false);
+            this.pnl_WDReceipt.PerformLayout();
+            this.pnl_ContinueBankingPrompt.ResumeLayout(false);
+            this.pnl_ContinueBankingPrompt.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -479,27 +552,32 @@
         private System.Windows.Forms.Button btn_AccountBalance;
         private System.Windows.Forms.Button btn_Deposit;
         private System.Windows.Forms.Button btn_Withdraw;
-        private System.Windows.Forms.Panel pnl_Withdraw1;
-        private System.Windows.Forms.Label lbl_ChooseWithdrawAccount;
-        private System.Windows.Forms.Button btn_WithdrawSavings;
-        private System.Windows.Forms.Button btn_WithdrawChequing;
-        private System.Windows.Forms.Panel pnl_Withdraw2;
-        private System.Windows.Forms.Label lbl_WithdrawlAmount;
-        private System.Windows.Forms.Button btn_Withdraw60;
-        private System.Windows.Forms.Button btn_Withdraw100;
-        private System.Windows.Forms.Button btn_Withdraw40;
-        private System.Windows.Forms.Button btn_Withdraw80;
-        private System.Windows.Forms.Button btn_Withdraw20;
-        private System.Windows.Forms.Panel pbl_ConfirmWithdrawal;
-        private System.Windows.Forms.Label lbl_ConfirmWithdraw;
-        private System.Windows.Forms.Button btn_WithdrawBack;
-        private System.Windows.Forms.Button btn_WithdrawConfirm;
-        private System.Windows.Forms.Label lbl_WithdrawAccountConfirm;
-        private System.Windows.Forms.Label lbl_From;
-        private System.Windows.Forms.Label lbl_WithdrawAmount;
-        private System.Windows.Forms.Panel pnl_WithdrawReceipt;
-        private System.Windows.Forms.Button btn_WithdrawReceiptOK;
-        private System.Windows.Forms.Label lbl_WithdrawReceipt;
+        private System.Windows.Forms.Panel pnl_WithdrawDeposit1;
+        private System.Windows.Forms.Label lbl_ChooseWDAccount;
+        private System.Windows.Forms.Button btn_WDSavings;
+        private System.Windows.Forms.Button btn_WDChequing;
+        private System.Windows.Forms.Panel pnl_WithdrawDeposit2;
+        private System.Windows.Forms.Label lbl_WDAmount;
+        private System.Windows.Forms.Button btn_WD60;
+        private System.Windows.Forms.Button btn_WD100;
+        private System.Windows.Forms.Button btn_WD40;
+        private System.Windows.Forms.Button btn_WD80;
+        private System.Windows.Forms.Button btn_WD20;
+        private System.Windows.Forms.Panel pnl_ConfirmWD;
+        private System.Windows.Forms.Label lbl_ConfirmWD;
+        private System.Windows.Forms.Button btn_WDBack;
+        private System.Windows.Forms.Button btn_WDConfirm;
+        private System.Windows.Forms.Label lbl_WDConfirmText;
+        private System.Windows.Forms.Panel pnl_WDReceipt;
+        private System.Windows.Forms.Button btn_WDReceiptOK;
+        private System.Windows.Forms.Label lbl_WDReceipt;
+        private System.Windows.Forms.Panel pnl_ContinueBankingPrompt;
+        private System.Windows.Forms.Button btn_ContinueLogout;
+        private System.Windows.Forms.Button btn_ContinueYes;
+        private System.Windows.Forms.Label lbl_ContinueBanking;
+        private System.Windows.Forms.Label lbl_AccountNumberError;
+        private System.Windows.Forms.Label lbl_PinError;
+        private System.Windows.Forms.Label lbl_NewBalance;
     }
 }
 
