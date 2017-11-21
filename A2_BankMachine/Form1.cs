@@ -29,7 +29,7 @@ namespace A2_BankMachine {
 
         public PrimaryForm() {
             InitializeComponent();
-            this.Size = new System.Drawing.Size(700,400);
+            this.Size = new System.Drawing.Size(602, 328);
         }
 
         public void ActivateScreen(string screenSelect) {
@@ -37,49 +37,49 @@ namespace A2_BankMachine {
 
             switch (screenSelect) {
                 case "Start":
-                    pnl_StartScreen.Location = new System.Drawing.Point(12, 12);
+                    pnl_StartScreen.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "Pin":
-                    pnl_PinScreen.Location = new System.Drawing.Point(12, 12);
+                    pnl_PinScreen.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "Action":
-                    pnl_ActionScreen.Location = new System.Drawing.Point(12, 12);
+                    pnl_ActionScreen.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "WithdrawDeposit1":
-                    pnl_WithdrawDeposit1.Location = new System.Drawing.Point(12, 12);
+                    pnl_WithdrawDeposit1.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "WithdrawDeposit2":
-                    pnl_WithdrawDeposit2.Location = new System.Drawing.Point(12, 12);
+                    pnl_WithdrawDeposit2.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "ConfirmWD":
-                    pnl_ConfirmWD.Location = new System.Drawing.Point(12, 12);
+                    pnl_ConfirmWD.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "WDReceipt":
-                    pnl_WDReceipt.Location = new System.Drawing.Point(12, 12);
+                    pnl_WDReceipt.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "ContinueBankingPrompt":
-                    pnl_ContinueBankingPrompt.Location = new System.Drawing.Point(12, 12);
+                    pnl_ContinueBankingPrompt.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "AccountBalance1":
-                    pnl_AccountBalance1.Location = new System.Drawing.Point(12, 12);
+                    pnl_AccountBalance1.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "AccountBalance2":
-                    pnl_AccountBalance2.Location = new System.Drawing.Point(12, 12);
+                    pnl_AccountBalance2.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "Transfers1":
-                    pnl_Transfers1.Location = new System.Drawing.Point(12, 12);
+                    pnl_Transfers1.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "Transfers2":
-                    pnl_Transfers2.Location = new System.Drawing.Point(12, 12);
+                    pnl_Transfers2.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "Transfers3":
-                    pnl_Transfers3.Location = new System.Drawing.Point(12, 12);
+                    pnl_Transfers3.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "Transfers4":
-                    pnl_Transfers4.Location = new System.Drawing.Point(12, 12);
+                    pnl_Transfers4.Location = new System.Drawing.Point(0, 0);
                     break;
                 case "Transfers5":
-                    pnl_Transfers5.Location = new System.Drawing.Point(12, 12);
+                    pnl_Transfers5.Location = new System.Drawing.Point(0, 0);
                     break;
                 default:
                     break;
@@ -330,6 +330,11 @@ namespace A2_BankMachine {
 
         private void btn_Transfers_Click(object sender, EventArgs e) {
             ActivateScreen("Transfers1");
+        }
+
+        private void btn_Logout_Click(object sender, EventArgs e) {
+            tb_AccountNumEntry.Text = "";
+            ActivateScreen("Start");
         }
     }
 
