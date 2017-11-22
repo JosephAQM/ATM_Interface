@@ -113,6 +113,12 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.btn_Back0 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Back1 = new System.Windows.Forms.Button();
+            this.btn_Back2 = new System.Windows.Forms.Button();
+            this.btn_Back3 = new System.Windows.Forms.Button();
+            this.btn_Back4 = new System.Windows.Forms.Button();
             this.pnl_StartScreen.SuspendLayout();
             this.pnl_PinScreen.SuspendLayout();
             this.pnl_ActionScreen.SuspendLayout();
@@ -245,6 +251,7 @@
             // 
             this.pnl_PinScreen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_PinScreen.BackgroundImage")));
             this.pnl_PinScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_PinScreen.Controls.Add(this.btn_Back0);
             this.pnl_PinScreen.Controls.Add(this.pictureBox3);
             this.pnl_PinScreen.Controls.Add(this.lbl_PinError);
             this.pnl_PinScreen.Controls.Add(this.btn_SubmitPin);
@@ -411,6 +418,7 @@
             // 
             this.pnl_WithdrawDeposit1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_WithdrawDeposit1.BackgroundImage")));
             this.pnl_WithdrawDeposit1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_WithdrawDeposit1.Controls.Add(this.btn_Back1);
             this.pnl_WithdrawDeposit1.Controls.Add(this.pictureBox4);
             this.pnl_WithdrawDeposit1.Controls.Add(this.btn_WDSavings);
             this.pnl_WithdrawDeposit1.Controls.Add(this.btn_WDChequing);
@@ -471,6 +479,7 @@
             // 
             this.pnl_WithdrawDeposit2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_WithdrawDeposit2.BackgroundImage")));
             this.pnl_WithdrawDeposit2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_WithdrawDeposit2.Controls.Add(this.button1);
             this.pnl_WithdrawDeposit2.Controls.Add(this.pictureBox5);
             this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WD60);
             this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WD100);
@@ -772,6 +781,7 @@
             // 
             this.pnl_AccountBalance1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_AccountBalance1.BackgroundImage")));
             this.pnl_AccountBalance1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_AccountBalance1.Controls.Add(this.btn_Back2);
             this.pnl_AccountBalance1.Controls.Add(this.pictureBox10);
             this.pnl_AccountBalance1.Controls.Add(this.btn_ViewBalanceSavings);
             this.pnl_AccountBalance1.Controls.Add(this.btn_ViewBalanceChequing);
@@ -885,6 +895,7 @@
             // 
             this.pnl_Transfers1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_Transfers1.BackgroundImage")));
             this.pnl_Transfers1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_Transfers1.Controls.Add(this.btn_Back3);
             this.pnl_Transfers1.Controls.Add(this.pictureBox11);
             this.pnl_Transfers1.Controls.Add(this.btn_Transfer1Savings);
             this.pnl_Transfers1.Controls.Add(this.btn_Transfer1Chequing);
@@ -945,6 +956,7 @@
             // 
             this.pnl_Transfers2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_Transfers2.BackgroundImage")));
             this.pnl_Transfers2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_Transfers2.Controls.Add(this.btn_Back4);
             this.pnl_Transfers2.Controls.Add(this.pictureBox12);
             this.pnl_Transfers2.Controls.Add(this.btn_Transfer2Savings);
             this.pnl_Transfers2.Controls.Add(this.btn_Transfer2Chequing);
@@ -1291,7 +1303,7 @@
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(9, 17);
+            this.pictureBox7.Location = new System.Drawing.Point(9, 9);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(105, 54);
             this.pictureBox7.TabIndex = 10;
@@ -1384,6 +1396,114 @@
             this.pictureBox15.Size = new System.Drawing.Size(105, 54);
             this.pictureBox15.TabIndex = 10;
             this.pictureBox15.TabStop = false;
+            // 
+            // btn_Back0
+            // 
+            this.btn_Back0.BackColor = System.Drawing.Color.White;
+            this.btn_Back0.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Back0.BackgroundImage")));
+            this.btn_Back0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Back0.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Back0.FlatAppearance.BorderSize = 0;
+            this.btn_Back0.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_Back0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_Back0.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_Back0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back0.Location = new System.Drawing.Point(9, 241);
+            this.btn_Back0.Name = "btn_Back0";
+            this.btn_Back0.Size = new System.Drawing.Size(75, 36);
+            this.btn_Back0.TabIndex = 11;
+            this.btn_Back0.UseVisualStyleBackColor = false;
+            this.btn_Back0.Click += new System.EventHandler(this.btn_Back0_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(9, 241);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.TabIndex = 12;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_Back1
+            // 
+            this.btn_Back1.BackColor = System.Drawing.Color.White;
+            this.btn_Back1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Back1.BackgroundImage")));
+            this.btn_Back1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Back1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Back1.FlatAppearance.BorderSize = 0;
+            this.btn_Back1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_Back1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_Back1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_Back1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back1.Location = new System.Drawing.Point(9, 241);
+            this.btn_Back1.Name = "btn_Back1";
+            this.btn_Back1.Size = new System.Drawing.Size(75, 36);
+            this.btn_Back1.TabIndex = 12;
+            this.btn_Back1.UseVisualStyleBackColor = false;
+            this.btn_Back1.Click += new System.EventHandler(this.btn_Back1_Click);
+            // 
+            // btn_Back2
+            // 
+            this.btn_Back2.BackColor = System.Drawing.Color.White;
+            this.btn_Back2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Back2.BackgroundImage")));
+            this.btn_Back2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Back2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Back2.FlatAppearance.BorderSize = 0;
+            this.btn_Back2.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_Back2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_Back2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_Back2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back2.Location = new System.Drawing.Point(9, 241);
+            this.btn_Back2.Name = "btn_Back2";
+            this.btn_Back2.Size = new System.Drawing.Size(75, 36);
+            this.btn_Back2.TabIndex = 12;
+            this.btn_Back2.UseVisualStyleBackColor = false;
+            this.btn_Back2.Click += new System.EventHandler(this.btn_Back2_Click);
+            // 
+            // btn_Back3
+            // 
+            this.btn_Back3.BackColor = System.Drawing.Color.White;
+            this.btn_Back3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Back3.BackgroundImage")));
+            this.btn_Back3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Back3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Back3.FlatAppearance.BorderSize = 0;
+            this.btn_Back3.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_Back3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_Back3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_Back3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back3.Location = new System.Drawing.Point(9, 241);
+            this.btn_Back3.Name = "btn_Back3";
+            this.btn_Back3.Size = new System.Drawing.Size(75, 36);
+            this.btn_Back3.TabIndex = 13;
+            this.btn_Back3.UseVisualStyleBackColor = false;
+            this.btn_Back3.Click += new System.EventHandler(this.btn_Back3_Click);
+            // 
+            // btn_Back4
+            // 
+            this.btn_Back4.BackColor = System.Drawing.Color.White;
+            this.btn_Back4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Back4.BackgroundImage")));
+            this.btn_Back4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Back4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Back4.FlatAppearance.BorderSize = 0;
+            this.btn_Back4.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_Back4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_Back4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_Back4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back4.Location = new System.Drawing.Point(9, 241);
+            this.btn_Back4.Name = "btn_Back4";
+            this.btn_Back4.Size = new System.Drawing.Size(75, 36);
+            this.btn_Back4.TabIndex = 14;
+            this.btn_Back4.UseVisualStyleBackColor = false;
+            this.btn_Back4.Click += new System.EventHandler(this.btn_Back4_Click);
             // 
             // PrimaryForm
             // 
@@ -1549,6 +1669,12 @@
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Button btn_Back0;
+        private System.Windows.Forms.Button btn_Back1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Back2;
+        private System.Windows.Forms.Button btn_Back3;
+        private System.Windows.Forms.Button btn_Back4;
     }
 }
 

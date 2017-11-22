@@ -336,6 +336,31 @@ namespace A2_BankMachine {
             tb_AccountNumEntry.Text = "";
             ActivateScreen("Start");
         }
+
+        private void btn_Back0_Click(object sender, EventArgs e) {
+            tb_AccountNumEntry.Text = "";
+            ActivateScreen("Start");
+        }
+
+        private void btn_Back1_Click(object sender, EventArgs e) {
+            ActivateScreen("Action");
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            ActivateScreen("WithdrawDeposit1");
+        }
+
+        private void btn_Back2_Click(object sender, EventArgs e) {
+            ActivateScreen("WithdrawDeposit1");
+        }
+
+        private void btn_Back3_Click(object sender, EventArgs e) {
+            ActivateScreen("WithdrawDeposit1");
+        }
+
+        private void btn_Back4_Click(object sender, EventArgs e) {
+            ActivateScreen("Transfers1");
+        }
     }
 
 }
