@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+
 
 namespace A2_BankMachine {
 
@@ -34,6 +36,7 @@ namespace A2_BankMachine {
 
         public void ActivateScreen(string screenSelect) {
             HideAllScreens();
+
 
             switch (screenSelect) {
                 case "Start":
@@ -105,7 +108,18 @@ namespace A2_BankMachine {
             pnl_Transfers5.Location = new System.Drawing.Point(999, 999);
         }
 
+        private void beep() {
+            SoundPlayer audio = new SoundPlayer(A2_BankMachine.Properties.Resources._4HC3_beep); // here WindowsFormsApplication1 is the namespace and Connect is the audio file name
+            audio.Play();
+        }
+
+        private void scanBeep() {
+            SoundPlayer audio = new SoundPlayer(A2_BankMachine.Properties.Resources._4HC3_scan); // here WindowsFormsApplication1 is the namespace and Connect is the audio file name
+            audio.Play();
+        }
+
         private void btn_TapCard_Click(object sender, EventArgs e) {
+            scanBeep();
             ActivateScreen("Pin");
         }
 
@@ -121,6 +135,8 @@ namespace A2_BankMachine {
             else {
                 lbl_AccountNumberError.Visible = false;
                 tb_PinEntry.Text = "";
+
+                beep();
                 ActivateScreen("Pin");
             }
             
@@ -133,6 +149,7 @@ namespace A2_BankMachine {
             }
             else {
                 lbl_PinError.Visible = false;
+                beep();
                 ActivateScreen("Action");
             }
             
@@ -141,12 +158,14 @@ namespace A2_BankMachine {
         private void btn_Withdraw_Click(object sender, EventArgs e) {
             actionTypeSelected = "Withdraw";
             lbl_ChooseWDAccount.Text = "Choose an account to withdraw from:";
+            beep();
             ActivateScreen("WithdrawDeposit1");
         }
 
         private void btn_Deposit_Click(object sender, EventArgs e) {
             actionTypeSelected = "Deposit";
             lbl_ChooseWDAccount.Text = "Choose an account to deposit to:";
+            beep();
             ActivateScreen("WithdrawDeposit1");
         }
 
@@ -158,11 +177,13 @@ namespace A2_BankMachine {
             else if (actionTypeSelected == "Withdraw") { ToOrFrom = "from"; }
 
             lbl_WDAmount.Text = "How much would you like to " + actionTypeSelected + " " + ToOrFrom + " " + accountTypeSelected + "?";
+            beep();
             ActivateScreen("WithdrawDeposit2");
         }
 
         private void btn_WDSavings_Click(object sender, EventArgs e) {
             accountTypeSelected = "Savings";
+            beep();
             ActivateScreen("WithdrawDeposit2");
         }
 
@@ -193,6 +214,7 @@ namespace A2_BankMachine {
 
         private void ContinueToWDConfirm() {
             lbl_WDConfirmText.Text = actionTypeSelected + " $" + WDAmount + " " + ToOrFrom + " " + accountTypeSelected + "?";
+            beep();
             ActivateScreen("ConfirmWD");
         }
 
@@ -218,24 +240,29 @@ namespace A2_BankMachine {
 
             if (accountTypeSelected == "Chequing") { lbl_NewBalance.Text = "New " + accountTypeSelected + " account balance: $" + chequingBalance; }
             else if (accountTypeSelected == "Savings") { lbl_NewBalance.Text = "New " + accountTypeSelected + " account balance: $" + savingsBalance; }
-            
+
+            beep();
             ActivateScreen("WDReceipt");
         }
 
         private void btn_WDReceiptOK_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("ContinueBankingPrompt");
         }
 
         private void btn_ContinueYes_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("Action");
         }
 
         private void btn_ContinueLogout_Click(object sender, EventArgs e) {
             tb_AccountNumEntry.Text = "";
+            beep();
             ActivateScreen("Start");
         }
 
         private void btn_AccountBalance_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("AccountBalance1");
 
         }
@@ -244,6 +271,7 @@ namespace A2_BankMachine {
             accountTypeSelected = "Chequing";
             lbl_VBAccountType.Text = "Chequing Account Balance:";
             lbl_VBAccountBalance.Text = "$" + chequingBalance;
+            beep();
             ActivateScreen("AccountBalance2");
         }
 
@@ -251,32 +279,38 @@ namespace A2_BankMachine {
             accountTypeSelected = "Savings";
             lbl_VBAccountType.Text = "Savings Account Balance:";
             lbl_VBAccountBalance.Text = "$" + savingsBalance;
+            beep();
             ActivateScreen("AccountBalance2");
         }
 
         private void lbl_VBOK_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("ContinueBankingPrompt");
         }
 
         private void btn_Transfer1Chequing_Click(object sender, EventArgs e) {
             transferFromAccountType = "Chequing";
+            beep();
             ActivateScreen("Transfers2");
         }
 
         private void btn_Transfer1Savings_Click(object sender, EventArgs e) {
             transferFromAccountType = "Savings";
+            beep();
             ActivateScreen("Transfers2");
         }
 
         private void btn_Transfer2Chequing_Click(object sender, EventArgs e) {
             transferToAccountType = "Chequing";
             lbl_Transfer3.Text = "Enter the amount to transfer from " + transferFromAccountType + " to " + transferToAccountType;
+            beep();
             ActivateScreen("Transfers3");
         }
 
         private void btn_Transfer2Savings_Click(object sender, EventArgs e) {
             transferToAccountType = "Savings";
             lbl_Transfer3.Text = "Enter the amount to transfer from " + transferFromAccountType + " to " + transferToAccountType;
+            beep();
             ActivateScreen("Transfers3");
         }
 
@@ -297,8 +331,9 @@ namespace A2_BankMachine {
             else { // No issues
                 lbl_Transfer3Error.Visible = false;
 
-                lbl_Transfer4.Text = "Transfer " + transferAmount + " from " + transferFromAccountType + " to " + transferToAccountType + "?";
+                lbl_Transfer4.Text = "Transfer $" + transferAmount + " from " + transferFromAccountType + " to " + transferToAccountType + "?";
 
+                beep();
                 ActivateScreen("Transfers4");
             }
         }
@@ -310,13 +345,15 @@ namespace A2_BankMachine {
             if (transferToAccountType == "Chequing") { chequingBalance += transferAmount; }
             else if (transferToAccountType == "Savings") { savingsBalance += transferAmount; }
 
-            lbl_T5NewChequingBalance.Text = "New Chequing Account Balance: " + chequingBalance;
-            lbl_T5NewSavingsBalance.Text = "New Savings Account Balance: " + savingsBalance;
+            lbl_T5NewChequingBalance.Text = "New Chequing Account Balance: $" + chequingBalance;
+            lbl_T5NewSavingsBalance.Text = "New Savings Account Balance: $" + savingsBalance;
 
+            beep();
             ActivateScreen("Transfers5");
         }
 
         private void btn_Transfer5OK_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("ContinueBankingPrompt");
         }
 
@@ -329,6 +366,7 @@ namespace A2_BankMachine {
         }
 
         private void btn_Transfers_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("Transfers1");
         }
 
@@ -351,11 +389,11 @@ namespace A2_BankMachine {
         }
 
         private void btn_Back2_Click(object sender, EventArgs e) {
-            ActivateScreen("WithdrawDeposit1");
+            ActivateScreen("Action");
         }
 
         private void btn_Back3_Click(object sender, EventArgs e) {
-            ActivateScreen("WithdrawDeposit1");
+            ActivateScreen("Action");
         }
 
         private void btn_Back4_Click(object sender, EventArgs e) {

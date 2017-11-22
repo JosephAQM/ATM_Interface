@@ -977,7 +977,7 @@
             this.btn_Transfer2Savings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_Transfer2Savings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_Transfer2Savings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Transfer2Savings.Location = new System.Drawing.Point(265, 145);
+            this.btn_Transfer2Savings.Location = new System.Drawing.Point(272, 145);
             this.btn_Transfer2Savings.Name = "btn_Transfer2Savings";
             this.btn_Transfer2Savings.Size = new System.Drawing.Size(75, 36);
             this.btn_Transfer2Savings.TabIndex = 2;
@@ -995,7 +995,7 @@
             this.btn_Transfer2Chequing.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_Transfer2Chequing.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_Transfer2Chequing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Transfer2Chequing.Location = new System.Drawing.Point(263, 103);
+            this.btn_Transfer2Chequing.Location = new System.Drawing.Point(272, 103);
             this.btn_Transfer2Chequing.Name = "btn_Transfer2Chequing";
             this.btn_Transfer2Chequing.Size = new System.Drawing.Size(75, 36);
             this.btn_Transfer2Chequing.TabIndex = 1;
@@ -1089,7 +1089,7 @@
             this.lbl_Transfer3.AutoSize = true;
             this.lbl_Transfer3.BackColor = System.Drawing.Color.White;
             this.lbl_Transfer3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Transfer3.Location = new System.Drawing.Point(205, 72);
+            this.lbl_Transfer3.Location = new System.Drawing.Point(108, 72);
             this.lbl_Transfer3.Name = "lbl_Transfer3";
             this.lbl_Transfer3.Size = new System.Drawing.Size(351, 18);
             this.lbl_Transfer3.TabIndex = 0;
