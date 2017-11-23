@@ -84,6 +84,9 @@ namespace A2_BankMachine {
                 case "Transfers5":
                     pnl_Transfers5.Location = new System.Drawing.Point(0, 0);
                     break;
+                case "WDOther":
+                    pnl_WDOther.Location = new System.Drawing.Point(0, 0);
+                    break;
                 default:
                     break;
             }
@@ -106,6 +109,7 @@ namespace A2_BankMachine {
             pnl_Transfers3.Location = new System.Drawing.Point(999, 999);
             pnl_Transfers4.Location = new System.Drawing.Point(999, 999);
             pnl_Transfers5.Location = new System.Drawing.Point(999, 999);
+            pnl_WDOther.Location = new System.Drawing.Point(999, 999);
         }
 
         private void beep() {
@@ -187,6 +191,13 @@ namespace A2_BankMachine {
 
         private void btn_WDSavings_Click(object sender, EventArgs e) {
             accountTypeSelected = "Savings";
+
+            ToOrFrom = "";
+            if (actionTypeSelected == "Deposit") { ToOrFrom = "to"; }
+            else if (actionTypeSelected == "Withdraw") { ToOrFrom = "from"; }
+
+            lbl_WDAmount.Text = "How much would you like to " + actionTypeSelected + " " + ToOrFrom + " " + accountTypeSelected + "?";
+
             beep();
             ActivateScreen("WithdrawDeposit2");
         }
@@ -428,6 +439,53 @@ namespace A2_BankMachine {
         //actually btn_PrintReceiptTransfers... doesnt auto update, scared to change it
         private void button2_Click(object sender, EventArgs e) {
             printReceipt("Transfer", transferAmount, transferToAccountType, transferFromAccountType, chequingBalance, savingsBalance, accountNumber);
+        }
+
+        private void btn_WDOther_Click(object sender, EventArgs e) {
+            ToOrFrom = "";
+            if (actionTypeSelected == "Deposit") { ToOrFrom = "to"; }
+            else if (actionTypeSelected == "Withdraw") { ToOrFrom = "from"; }
+
+            lbl_WDOtherText.Text = "Enter amount to " + actionTypeSelected + " " + ToOrFrom + " " + accountTypeSelected;
+            ActivateScreen("WDOther");
+        }
+
+        private void btn_WDOtherConfirm_Click(object sender, EventArgs e) {
+            double fromAccountBalance = 0;
+
+            if (accountTypeSelected == "Chequing") { fromAccountBalance = chequingBalance; }
+            else if (accountTypeSelected == "Savings") { fromAccountBalance = savingsBalance; }
+
+            if (!Double.TryParse(tb_WDOther.Text, out WDAmount)) {
+                lbl_WDOtherError.Text = "Error: Transfer amount must be a number";
+                lbl_WDOtherError.Visible = true;
+            }
+            else if ((WDAmount > fromAccountBalance) && (actionTypeSelected == "Withdraw")) {
+                lbl_WDOtherError.Text = "Error: Insufficient funds";
+                lbl_WDOtherError.Visible = true;
+            }
+            else if (WDAmount % 10 != 0) {
+                lbl_WDOtherError.Text = "Error: This machine only dispenses/accepts\n$10, $20, and $50 bills";
+                lbl_WDOtherError.Visible = true;
+            }
+            else { // No issues
+                lbl_WDOtherError.Visible = false;
+
+                //lbl_WDOtherText.Text = "Transfer $" + WDAmount + " from " + transferFromAccountType + " to " + transferToAccountType + "?";
+
+
+
+                beep();
+                ContinueToWDConfirm();
+            }
+        }
+
+        private void btn_WDBack_Click(object sender, EventArgs e) {
+            ActivateScreen("WithdrawDeposit2");
+        }
+
+        private void btn_WDOtherBack_Click(object sender, EventArgs e) {
+            ActivateScreen("WithdrawDeposit2");
         }
     }
 

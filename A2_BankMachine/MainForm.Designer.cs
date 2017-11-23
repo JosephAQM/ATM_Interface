@@ -122,6 +122,14 @@
             this.lbl_T5NewSavingsBalance = new System.Windows.Forms.Label();
             this.lbl_T5NewChequingBalance = new System.Windows.Forms.Label();
             this.lbl_TransferSuccess = new System.Windows.Forms.Label();
+            this.btn_WDOther = new System.Windows.Forms.Button();
+            this.pnl_WDOther = new System.Windows.Forms.Panel();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.lbl_WDOtherError = new System.Windows.Forms.Label();
+            this.btn_WDOtherBack = new System.Windows.Forms.Button();
+            this.btn_WDOtherConfirm = new System.Windows.Forms.Button();
+            this.tb_WDOther = new System.Windows.Forms.TextBox();
+            this.lbl_WDOtherText = new System.Windows.Forms.Label();
             this.pnl_StartScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_PinScreen.SuspendLayout();
@@ -152,6 +160,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.pnl_Transfers5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.pnl_WDOther.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_AccountNum
@@ -580,6 +590,7 @@
             // 
             this.pnl_WithdrawDeposit2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_WithdrawDeposit2.BackgroundImage")));
             this.pnl_WithdrawDeposit2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WDOther);
             this.pnl_WithdrawDeposit2.Controls.Add(this.button1);
             this.pnl_WithdrawDeposit2.Controls.Add(this.pictureBox5);
             this.pnl_WithdrawDeposit2.Controls.Add(this.btn_WD60);
@@ -764,6 +775,7 @@
             this.btn_WDBack.Size = new System.Drawing.Size(75, 36);
             this.btn_WDBack.TabIndex = 5;
             this.btn_WDBack.UseVisualStyleBackColor = false;
+            this.btn_WDBack.Click += new System.EventHandler(this.btn_WDBack_Click);
             // 
             // btn_WDConfirm
             // 
@@ -1564,11 +1576,123 @@
             this.lbl_TransferSuccess.TabIndex = 0;
             this.lbl_TransferSuccess.Text = "Transfer Successful";
             // 
+            // btn_WDOther
+            // 
+            this.btn_WDOther.BackColor = System.Drawing.Color.White;
+            this.btn_WDOther.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_WDOther.BackgroundImage")));
+            this.btn_WDOther.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_WDOther.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_WDOther.FlatAppearance.BorderSize = 0;
+            this.btn_WDOther.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_WDOther.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_WDOther.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_WDOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_WDOther.Location = new System.Drawing.Point(286, 194);
+            this.btn_WDOther.Name = "btn_WDOther";
+            this.btn_WDOther.Size = new System.Drawing.Size(75, 36);
+            this.btn_WDOther.TabIndex = 13;
+            this.btn_WDOther.UseVisualStyleBackColor = false;
+            this.btn_WDOther.Click += new System.EventHandler(this.btn_WDOther_Click);
+            // 
+            // pnl_WDOther
+            // 
+            this.pnl_WDOther.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_WDOther.BackgroundImage")));
+            this.pnl_WDOther.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_WDOther.Controls.Add(this.pictureBox16);
+            this.pnl_WDOther.Controls.Add(this.lbl_WDOtherError);
+            this.pnl_WDOther.Controls.Add(this.btn_WDOtherBack);
+            this.pnl_WDOther.Controls.Add(this.btn_WDOtherConfirm);
+            this.pnl_WDOther.Controls.Add(this.tb_WDOther);
+            this.pnl_WDOther.Controls.Add(this.lbl_WDOtherText);
+            this.pnl_WDOther.Location = new System.Drawing.Point(1229, 603);
+            this.pnl_WDOther.Name = "pnl_WDOther";
+            this.pnl_WDOther.Size = new System.Drawing.Size(602, 289);
+            this.pnl_WDOther.TabIndex = 21;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BackColor = System.Drawing.Color.White;
+            this.pictureBox16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox16.BackgroundImage")));
+            this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox16.Location = new System.Drawing.Point(9, 9);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(105, 54);
+            this.pictureBox16.TabIndex = 10;
+            this.pictureBox16.TabStop = false;
+            // 
+            // lbl_WDOtherError
+            // 
+            this.lbl_WDOtherError.AutoSize = true;
+            this.lbl_WDOtherError.BackColor = System.Drawing.Color.White;
+            this.lbl_WDOtherError.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_WDOtherError.ForeColor = System.Drawing.Color.Red;
+            this.lbl_WDOtherError.Location = new System.Drawing.Point(231, 113);
+            this.lbl_WDOtherError.Name = "lbl_WDOtherError";
+            this.lbl_WDOtherError.Size = new System.Drawing.Size(67, 13);
+            this.lbl_WDOtherError.TabIndex = 4;
+            this.lbl_WDOtherError.Text = "Error_Text";
+            this.lbl_WDOtherError.Visible = false;
+            // 
+            // btn_WDOtherBack
+            // 
+            this.btn_WDOtherBack.BackColor = System.Drawing.Color.White;
+            this.btn_WDOtherBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_WDOtherBack.BackgroundImage")));
+            this.btn_WDOtherBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_WDOtherBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_WDOtherBack.FlatAppearance.BorderSize = 0;
+            this.btn_WDOtherBack.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_WDOtherBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_WDOtherBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_WDOtherBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_WDOtherBack.Location = new System.Drawing.Point(259, 191);
+            this.btn_WDOtherBack.Name = "btn_WDOtherBack";
+            this.btn_WDOtherBack.Size = new System.Drawing.Size(75, 36);
+            this.btn_WDOtherBack.TabIndex = 3;
+            this.btn_WDOtherBack.UseVisualStyleBackColor = false;
+            this.btn_WDOtherBack.Click += new System.EventHandler(this.btn_WDOtherBack_Click);
+            // 
+            // btn_WDOtherConfirm
+            // 
+            this.btn_WDOtherConfirm.BackColor = System.Drawing.Color.White;
+            this.btn_WDOtherConfirm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_WDOtherConfirm.BackgroundImage")));
+            this.btn_WDOtherConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_WDOtherConfirm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_WDOtherConfirm.FlatAppearance.BorderSize = 0;
+            this.btn_WDOtherConfirm.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_WDOtherConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_WDOtherConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_WDOtherConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_WDOtherConfirm.Location = new System.Drawing.Point(259, 149);
+            this.btn_WDOtherConfirm.Name = "btn_WDOtherConfirm";
+            this.btn_WDOtherConfirm.Size = new System.Drawing.Size(75, 36);
+            this.btn_WDOtherConfirm.TabIndex = 2;
+            this.btn_WDOtherConfirm.UseVisualStyleBackColor = false;
+            this.btn_WDOtherConfirm.Click += new System.EventHandler(this.btn_WDOtherConfirm_Click);
+            // 
+            // tb_WDOther
+            // 
+            this.tb_WDOther.Location = new System.Drawing.Point(234, 86);
+            this.tb_WDOther.Name = "tb_WDOther";
+            this.tb_WDOther.Size = new System.Drawing.Size(129, 20);
+            this.tb_WDOther.TabIndex = 1;
+            // 
+            // lbl_WDOtherText
+            // 
+            this.lbl_WDOtherText.AutoSize = true;
+            this.lbl_WDOtherText.BackColor = System.Drawing.Color.White;
+            this.lbl_WDOtherText.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_WDOtherText.Location = new System.Drawing.Point(151, 49);
+            this.lbl_WDOtherText.Name = "lbl_WDOtherText";
+            this.lbl_WDOtherText.Size = new System.Drawing.Size(351, 18);
+            this.lbl_WDOtherText.TabIndex = 0;
+            this.lbl_WDOtherText.Text = "Select the amount to transfer from __ to ___";
+            // 
             // PrimaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2145, 1947);
+            this.Controls.Add(this.pnl_WDOther);
             this.Controls.Add(this.btn_test);
             this.Controls.Add(this.pnl_Transfers5);
             this.Controls.Add(this.pnl_Transfers4);
@@ -1635,6 +1759,9 @@
             this.pnl_Transfers5.ResumeLayout(false);
             this.pnl_Transfers5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.pnl_WDOther.ResumeLayout(false);
+            this.pnl_WDOther.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1738,6 +1865,14 @@
         private System.Windows.Forms.Button btn_test;
         private System.Windows.Forms.Button btn_PrintReceiptDW;
         private System.Windows.Forms.Button btn_PrintReceiptTransfers;
+        private System.Windows.Forms.Button btn_WDOther;
+        private System.Windows.Forms.Panel pnl_WDOther;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Label lbl_WDOtherError;
+        private System.Windows.Forms.Button btn_WDOtherBack;
+        private System.Windows.Forms.Button btn_WDOtherConfirm;
+        private System.Windows.Forms.TextBox tb_WDOther;
+        private System.Windows.Forms.Label lbl_WDOtherText;
     }
 }
 
