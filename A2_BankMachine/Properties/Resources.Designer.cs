@@ -72,6 +72,15 @@ namespace A2_BankMachine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _4HC3_error {
+            get {
+                return ResourceManager.GetStream("_4HC3_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream _4HC3_scan {
             get {
                 return ResourceManager.GetStream("_4HC3_scan", resourceCulture);

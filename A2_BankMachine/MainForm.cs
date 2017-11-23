@@ -27,6 +27,8 @@ namespace A2_BankMachine {
         private string transferToAccountType;
         private double transferAmount;
 
+        private string pin;
+
         string ToOrFrom;
 
         public PrimaryForm() {
@@ -122,6 +124,11 @@ namespace A2_BankMachine {
             audio.Play();
         }
 
+        private void errorBeep() {
+            SoundPlayer audio = new SoundPlayer(A2_BankMachine.Properties.Resources._4HC3_error); // here WindowsFormsApplication1 is the namespace and Connect is the audio file name
+            audio.Play();
+        }
+
         private void btn_TapCard_Click(object sender, EventArgs e) {
             scanBeep();
             ActivateScreen("Pin");
@@ -131,14 +138,17 @@ namespace A2_BankMachine {
             if (tb_AccountNumEntry.Text == "") {
                 lbl_AccountNumberError.Text = "Error: Please enter an account number.";
                 lbl_AccountNumberError.Visible = true;
+                errorBeep();
             }
             else if (!Int64.TryParse(tb_AccountNumEntry.Text, out accountNumber)) {
                 lbl_AccountNumberError.Text = "Error: Account number can only contain numbers.";
                 lbl_AccountNumberError.Visible = true;
+                errorBeep();
             }
             else if (tb_AccountNumEntry.Text.Length != 10) {
                 lbl_AccountNumberError.Text = "Error: Account number must be 10 digits long.";
                 lbl_AccountNumberError.Visible = true;
+                errorBeep();
             }
             else {
                 lbl_AccountNumberError.Visible = false;
@@ -151,14 +161,23 @@ namespace A2_BankMachine {
         }
 
         private void btn_SubmitPin_Click(object sender, EventArgs e) {
+            int testIfInt = 0;
+
             if (tb_PinEntry.Text.Length != 4) {
                 lbl_PinError.Text = "Error: PIN must contain 4 digits";
                 lbl_PinError.Visible = true;
+                errorBeep();
+            }
+            else if (!Int32.TryParse(tb_PinEntry.Text, out testIfInt)) {
+                lbl_PinError.Text = "Error: PIN must contain only numbers";
+                lbl_PinError.Visible = true;
+                errorBeep();
             }
             else {
                 lbl_PinError.Visible = false;
                 beep();
                 ActivateScreen("Action");
+                tb_PinEntry.Text = "";
             }
             
         }
@@ -305,12 +324,16 @@ namespace A2_BankMachine {
 
         private void btn_Transfer1Chequing_Click(object sender, EventArgs e) {
             transferFromAccountType = "Chequing";
+            btn_Transfer2Chequing.Enabled = false;
+            btn_Transfer2Chequing.Visible = false;
             beep();
             ActivateScreen("Transfers2");
         }
 
         private void btn_Transfer1Savings_Click(object sender, EventArgs e) {
             transferFromAccountType = "Savings";
+            btn_Transfer2Savings.Enabled = false;
+            btn_Transfer2Savings.Visible = false;
             beep();
             ActivateScreen("Transfers2");
         }
@@ -318,6 +341,9 @@ namespace A2_BankMachine {
         private void btn_Transfer2Chequing_Click(object sender, EventArgs e) {
             transferToAccountType = "Chequing";
             lbl_Transfer3.Text = "Enter the amount to transfer from " + transferFromAccountType + " to " + transferToAccountType;
+
+            btn_Transfer2Chequing.Enabled = true;
+            btn_Transfer2Chequing.Visible = true;
             beep();
             ActivateScreen("Transfers3");
         }
@@ -325,6 +351,8 @@ namespace A2_BankMachine {
         private void btn_Transfer2Savings_Click(object sender, EventArgs e) {
             transferToAccountType = "Savings";
             lbl_Transfer3.Text = "Enter the amount to transfer from " + transferFromAccountType + " to " + transferToAccountType;
+            btn_Transfer2Savings.Enabled = true;
+            btn_Transfer2Savings.Visible = true;
             beep();
             ActivateScreen("Transfers3");
         }
@@ -338,10 +366,12 @@ namespace A2_BankMachine {
             if (!Double.TryParse(tb_TransferAmount.Text, out transferAmount)) {
                 lbl_Transfer3Error.Text = "Error: Transfer amount must be a number";
                 lbl_Transfer3Error.Visible = true;
+                errorBeep();
             }
             else if (transferAmount > fromAccountBalance) {
                 lbl_Transfer3Error.Text = "Error: Insufficient funds";
                 lbl_Transfer3Error.Visible = true;
+                errorBeep();
             }
             else { // No issues
                 lbl_Transfer3Error.Visible = false;
@@ -373,10 +403,12 @@ namespace A2_BankMachine {
         }
 
         private void btn_Transfer3Back_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("Transfers2");
         }
 
         private void btn_Transfer4Back_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("Transfers3");
         }
 
@@ -388,31 +420,43 @@ namespace A2_BankMachine {
         private void btn_Logout_Click(object sender, EventArgs e) {
             tb_AccountNumEntry.Text = "";
             ActivateScreen("Start");
+            beep();
         }
 
         private void btn_Back0_Click(object sender, EventArgs e) {
             tb_AccountNumEntry.Text = "";
+            beep();
             ActivateScreen("Start");
         }
 
         private void btn_Back1_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("Action");
         }
 
         private void button1_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("WithdrawDeposit1");
         }
 
         private void btn_Back2_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("Action");
         }
 
         private void btn_Back3_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("Action");
         }
 
         private void btn_Back4_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("Transfers1");
+            btn_Transfer2Chequing.Enabled = true;
+            btn_Transfer2Savings.Enabled = true;
+
+            btn_Transfer2Chequing.Visible = true;
+            btn_Transfer2Savings.Visible = true;
         }
 
         private void btn_test_Click(object sender, EventArgs e) {
@@ -438,6 +482,7 @@ namespace A2_BankMachine {
 
         //actually btn_PrintReceiptTransfers... doesnt auto update, scared to change it
         private void button2_Click(object sender, EventArgs e) {
+            beep();
             printReceipt("Transfer", transferAmount, transferToAccountType, transferFromAccountType, chequingBalance, savingsBalance, accountNumber);
         }
 
@@ -447,6 +492,7 @@ namespace A2_BankMachine {
             else if (actionTypeSelected == "Withdraw") { ToOrFrom = "from"; }
 
             lbl_WDOtherText.Text = "Enter amount to " + actionTypeSelected + " " + ToOrFrom + " " + accountTypeSelected;
+            beep();
             ActivateScreen("WDOther");
         }
 
@@ -459,14 +505,17 @@ namespace A2_BankMachine {
             if (!Double.TryParse(tb_WDOther.Text, out WDAmount)) {
                 lbl_WDOtherError.Text = "Error: Transfer amount must be a number";
                 lbl_WDOtherError.Visible = true;
+                errorBeep();
             }
             else if ((WDAmount > fromAccountBalance) && (actionTypeSelected == "Withdraw")) {
                 lbl_WDOtherError.Text = "Error: Insufficient funds";
                 lbl_WDOtherError.Visible = true;
+                errorBeep();
             }
             else if (WDAmount % 10 != 0) {
                 lbl_WDOtherError.Text = "Error: This machine only dispenses/accepts\n$10, $20, and $50 bills";
                 lbl_WDOtherError.Visible = true;
+                errorBeep();
             }
             else { // No issues
                 lbl_WDOtherError.Visible = false;
@@ -481,12 +530,21 @@ namespace A2_BankMachine {
         }
 
         private void btn_WDBack_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("WithdrawDeposit2");
         }
 
         private void btn_WDOtherBack_Click(object sender, EventArgs e) {
+            beep();
             ActivateScreen("WithdrawDeposit2");
         }
+
+        private void tb_PinEntry_TextChanged(object sender, EventArgs e) {
+            pin += tb_PinEntry.Text.Replace("*", "");
+            beep();
+            //tb_PinEntry.Text = "hello";//new string('*', pin.Length);
+        }
+
     }
 
 }

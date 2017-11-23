@@ -28,7 +28,7 @@ namespace A2_BankMachine {
                     lbl_TransactionDescription.Text = "Transaction Description:\nTransfer from " + transferFromAccount + " to " + transferToAccount;
                     lbl_TransactionAmount.Text = "Transfer Amount: $" + transactionAmount.ToString();
 
-                    lbl_NewBalances.Text = "Updated Balances:\n Chequing: $" + transferToNewBalance + "\nSavings: $" + transferFromNewBalance;
+                    lbl_NewBalances.Text = "Updated Balances:\nChequing: $" + transferToNewBalance + "\nSavings: $" + transferFromNewBalance;
                     break;
                 case "Deposit":
                     lbl_TransactionDescription.Text = "Transaction Description:\nCash Deposit to " + transferToAccount;

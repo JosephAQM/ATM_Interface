@@ -29,10 +29,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_TapCard = new System.Windows.Forms.Button();
             this.pnl_StartScreen = new System.Windows.Forms.Panel();
-            this.btn_test = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_AccountNumberError = new System.Windows.Forms.Label();
             this.btn_SubmitAccNum = new System.Windows.Forms.Button();
+            this.btn_test = new System.Windows.Forms.Button();
             this.pnl_PinScreen = new System.Windows.Forms.Panel();
             this.btn_Back0 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -54,6 +55,7 @@
             this.btn_WDChequing = new System.Windows.Forms.Button();
             this.lbl_ChooseWDAccount = new System.Windows.Forms.Label();
             this.pnl_WithdrawDeposit2 = new System.Windows.Forms.Panel();
+            this.btn_WDOther = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btn_WD60 = new System.Windows.Forms.Button();
@@ -122,7 +124,6 @@
             this.lbl_T5NewSavingsBalance = new System.Windows.Forms.Label();
             this.lbl_T5NewChequingBalance = new System.Windows.Forms.Label();
             this.lbl_TransferSuccess = new System.Windows.Forms.Label();
-            this.btn_WDOther = new System.Windows.Forms.Button();
             this.pnl_WDOther = new System.Windows.Forms.Panel();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.lbl_WDOtherError = new System.Windows.Forms.Label();
@@ -217,6 +218,7 @@
             // 
             this.pnl_StartScreen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_StartScreen.BackgroundImage")));
             this.pnl_StartScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_StartScreen.Controls.Add(this.label3);
             this.pnl_StartScreen.Controls.Add(this.pictureBox1);
             this.pnl_StartScreen.Controls.Add(this.lbl_AccountNumberError);
             this.pnl_StartScreen.Controls.Add(this.btn_SubmitAccNum);
@@ -229,23 +231,17 @@
             this.pnl_StartScreen.Size = new System.Drawing.Size(602, 289);
             this.pnl_StartScreen.TabIndex = 5;
             // 
-            // btn_test
+            // label3
             // 
-            this.btn_test.BackColor = System.Drawing.Color.White;
-            this.btn_test.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_test.BackgroundImage")));
-            this.btn_test.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_test.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_test.FlatAppearance.BorderSize = 0;
-            this.btn_test.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_test.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btn_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_test.ForeColor = System.Drawing.Color.White;
-            this.btn_test.Location = new System.Drawing.Point(1229, 12);
-            this.btn_test.Name = "btn_test";
-            this.btn_test.Size = new System.Drawing.Size(75, 36);
-            this.btn_test.TabIndex = 7;
-            this.btn_test.UseVisualStyleBackColor = false;
-            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(276, 260);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Tap";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox1
             // 
@@ -288,6 +284,24 @@
             this.btn_SubmitAccNum.TabIndex = 2;
             this.btn_SubmitAccNum.UseVisualStyleBackColor = false;
             this.btn_SubmitAccNum.Click += new System.EventHandler(this.btn_SubmitAccNum_Click);
+            // 
+            // btn_test
+            // 
+            this.btn_test.BackColor = System.Drawing.Color.White;
+            this.btn_test.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_test.BackgroundImage")));
+            this.btn_test.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_test.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_test.FlatAppearance.BorderSize = 0;
+            this.btn_test.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_test.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_test.ForeColor = System.Drawing.Color.White;
+            this.btn_test.Location = new System.Drawing.Point(1229, 12);
+            this.btn_test.Name = "btn_test";
+            this.btn_test.Size = new System.Drawing.Size(75, 36);
+            this.btn_test.TabIndex = 7;
+            this.btn_test.UseVisualStyleBackColor = false;
+            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
             // 
             // pnl_PinScreen
             // 
@@ -369,8 +383,10 @@
             this.tb_PinEntry.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_PinEntry.Location = new System.Drawing.Point(222, 90);
             this.tb_PinEntry.Name = "tb_PinEntry";
+            this.tb_PinEntry.PasswordChar = '*';
             this.tb_PinEntry.Size = new System.Drawing.Size(100, 23);
             this.tb_PinEntry.TabIndex = 1;
+            this.tb_PinEntry.TextChanged += new System.EventHandler(this.tb_PinEntry_TextChanged);
             // 
             // lbl_EnterPin
             // 
@@ -603,6 +619,24 @@
             this.pnl_WithdrawDeposit2.Name = "pnl_WithdrawDeposit2";
             this.pnl_WithdrawDeposit2.Size = new System.Drawing.Size(602, 289);
             this.pnl_WithdrawDeposit2.TabIndex = 9;
+            // 
+            // btn_WDOther
+            // 
+            this.btn_WDOther.BackColor = System.Drawing.Color.White;
+            this.btn_WDOther.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_WDOther.BackgroundImage")));
+            this.btn_WDOther.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_WDOther.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_WDOther.FlatAppearance.BorderSize = 0;
+            this.btn_WDOther.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn_WDOther.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_WDOther.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_WDOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_WDOther.Location = new System.Drawing.Point(286, 194);
+            this.btn_WDOther.Name = "btn_WDOther";
+            this.btn_WDOther.Size = new System.Drawing.Size(75, 36);
+            this.btn_WDOther.TabIndex = 13;
+            this.btn_WDOther.UseVisualStyleBackColor = false;
+            this.btn_WDOther.Click += new System.EventHandler(this.btn_WDOther_Click);
             // 
             // button1
             // 
@@ -1096,7 +1130,7 @@
             this.lbl_VBOK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.lbl_VBOK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.lbl_VBOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_VBOK.Location = new System.Drawing.Point(250, 135);
+            this.lbl_VBOK.Location = new System.Drawing.Point(250, 142);
             this.lbl_VBOK.Name = "lbl_VBOK";
             this.lbl_VBOK.Size = new System.Drawing.Size(75, 36);
             this.lbl_VBOK.TabIndex = 2;
@@ -1108,7 +1142,7 @@
             this.lbl_VBAccountType.AutoSize = true;
             this.lbl_VBAccountType.BackColor = System.Drawing.Color.White;
             this.lbl_VBAccountType.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_VBAccountType.Location = new System.Drawing.Point(225, 93);
+            this.lbl_VBAccountType.Location = new System.Drawing.Point(227, 76);
             this.lbl_VBAccountType.Name = "lbl_VBAccountType";
             this.lbl_VBAccountType.Size = new System.Drawing.Size(113, 18);
             this.lbl_VBAccountType.TabIndex = 1;
@@ -1119,7 +1153,7 @@
             this.lbl_VBAccountBalance.AutoSize = true;
             this.lbl_VBAccountBalance.BackColor = System.Drawing.Color.White;
             this.lbl_VBAccountBalance.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_VBAccountBalance.Location = new System.Drawing.Point(225, 111);
+            this.lbl_VBAccountBalance.Location = new System.Drawing.Point(227, 102);
             this.lbl_VBAccountBalance.Name = "lbl_VBAccountBalance";
             this.lbl_VBAccountBalance.Size = new System.Drawing.Size(135, 18);
             this.lbl_VBAccountBalance.TabIndex = 0;
@@ -1464,7 +1498,7 @@
             this.lbl_Transfer4.AutoSize = true;
             this.lbl_Transfer4.BackColor = System.Drawing.Color.White;
             this.lbl_Transfer4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Transfer4.Location = new System.Drawing.Point(186, 108);
+            this.lbl_Transfer4.Location = new System.Drawing.Point(187, 84);
             this.lbl_Transfer4.Name = "lbl_Transfer4";
             this.lbl_Transfer4.Size = new System.Drawing.Size(243, 18);
             this.lbl_Transfer4.TabIndex = 1;
@@ -1507,7 +1541,7 @@
             this.btn_PrintReceiptTransfers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_PrintReceiptTransfers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_PrintReceiptTransfers.ForeColor = System.Drawing.Color.Black;
-            this.btn_PrintReceiptTransfers.Location = new System.Drawing.Point(274, 132);
+            this.btn_PrintReceiptTransfers.Location = new System.Drawing.Point(259, 131);
             this.btn_PrintReceiptTransfers.Name = "btn_PrintReceiptTransfers";
             this.btn_PrintReceiptTransfers.Size = new System.Drawing.Size(75, 36);
             this.btn_PrintReceiptTransfers.TabIndex = 12;
@@ -1536,7 +1570,7 @@
             this.btn_Transfer5OK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_Transfer5OK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_Transfer5OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Transfer5OK.Location = new System.Drawing.Point(274, 174);
+            this.btn_Transfer5OK.Location = new System.Drawing.Point(259, 173);
             this.btn_Transfer5OK.Name = "btn_Transfer5OK";
             this.btn_Transfer5OK.Size = new System.Drawing.Size(75, 36);
             this.btn_Transfer5OK.TabIndex = 3;
@@ -1548,7 +1582,7 @@
             this.lbl_T5NewSavingsBalance.AutoSize = true;
             this.lbl_T5NewSavingsBalance.BackColor = System.Drawing.Color.White;
             this.lbl_T5NewSavingsBalance.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_T5NewSavingsBalance.Location = new System.Drawing.Point(211, 102);
+            this.lbl_T5NewSavingsBalance.Location = new System.Drawing.Point(196, 101);
             this.lbl_T5NewSavingsBalance.Name = "lbl_T5NewSavingsBalance";
             this.lbl_T5NewSavingsBalance.Size = new System.Drawing.Size(207, 18);
             this.lbl_T5NewSavingsBalance.TabIndex = 2;
@@ -1559,7 +1593,7 @@
             this.lbl_T5NewChequingBalance.AutoSize = true;
             this.lbl_T5NewChequingBalance.BackColor = System.Drawing.Color.White;
             this.lbl_T5NewChequingBalance.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_T5NewChequingBalance.Location = new System.Drawing.Point(211, 73);
+            this.lbl_T5NewChequingBalance.Location = new System.Drawing.Point(196, 72);
             this.lbl_T5NewChequingBalance.Name = "lbl_T5NewChequingBalance";
             this.lbl_T5NewChequingBalance.Size = new System.Drawing.Size(218, 18);
             this.lbl_T5NewChequingBalance.TabIndex = 1;
@@ -1570,29 +1604,11 @@
             this.lbl_TransferSuccess.AutoSize = true;
             this.lbl_TransferSuccess.BackColor = System.Drawing.Color.White;
             this.lbl_TransferSuccess.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TransferSuccess.Location = new System.Drawing.Point(231, 35);
+            this.lbl_TransferSuccess.Location = new System.Drawing.Point(216, 34);
             this.lbl_TransferSuccess.Name = "lbl_TransferSuccess";
             this.lbl_TransferSuccess.Size = new System.Drawing.Size(150, 18);
             this.lbl_TransferSuccess.TabIndex = 0;
             this.lbl_TransferSuccess.Text = "Transfer Successful";
-            // 
-            // btn_WDOther
-            // 
-            this.btn_WDOther.BackColor = System.Drawing.Color.White;
-            this.btn_WDOther.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_WDOther.BackgroundImage")));
-            this.btn_WDOther.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_WDOther.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_WDOther.FlatAppearance.BorderSize = 0;
-            this.btn_WDOther.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btn_WDOther.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_WDOther.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btn_WDOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_WDOther.Location = new System.Drawing.Point(286, 194);
-            this.btn_WDOther.Name = "btn_WDOther";
-            this.btn_WDOther.Size = new System.Drawing.Size(75, 36);
-            this.btn_WDOther.TabIndex = 13;
-            this.btn_WDOther.UseVisualStyleBackColor = false;
-            this.btn_WDOther.Click += new System.EventHandler(this.btn_WDOther_Click);
             // 
             // pnl_WDOther
             // 
@@ -1873,6 +1889,7 @@
         private System.Windows.Forms.Button btn_WDOtherConfirm;
         private System.Windows.Forms.TextBox tb_WDOther;
         private System.Windows.Forms.Label lbl_WDOtherText;
+        private System.Windows.Forms.Label label3;
     }
 }
 

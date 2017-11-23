@@ -117,6 +117,7 @@
             this.Controls.Add(this.lbl_AccountNum);
             this.Controls.Add(this.lbl_DateTime);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReceiptForm";
