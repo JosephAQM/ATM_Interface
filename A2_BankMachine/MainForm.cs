@@ -14,7 +14,7 @@ namespace A2_BankMachine {
 
     public partial class PrimaryForm : Form {
 
-        private int accountNumber; // Can be string... but used for int check
+        private long accountNumber; // Can be string... but used for int check
 
         private double savingsBalance = 1000.00;
         private double chequingBalance = 500.00;
@@ -128,8 +128,12 @@ namespace A2_BankMachine {
                 lbl_AccountNumberError.Text = "Error: Please enter an account number.";
                 lbl_AccountNumberError.Visible = true;
             }
-            else if (!Int32.TryParse(tb_AccountNumEntry.Text, out accountNumber)) {
+            else if (!Int64.TryParse(tb_AccountNumEntry.Text, out accountNumber)) {
                 lbl_AccountNumberError.Text = "Error: Account number can only contain numbers.";
+                lbl_AccountNumberError.Visible = true;
+            }
+            else if (tb_AccountNumEntry.Text.Length != 10) {
+                lbl_AccountNumberError.Text = "Error: Account number must be 10 digits long.";
                 lbl_AccountNumberError.Visible = true;
             }
             else {
@@ -398,6 +402,32 @@ namespace A2_BankMachine {
 
         private void btn_Back4_Click(object sender, EventArgs e) {
             ActivateScreen("Transfers1");
+        }
+
+        private void btn_test_Click(object sender, EventArgs e) {
+            printReceipt("Transfer", 100, "Chequing", "Savings", 1100, 900, 0123456789);
+        }
+
+        public void printReceipt(string transactionType, double transactionAmount, string transferToAccount, string transferFromAccount, double transferToNewBalance, double transferFromNewBalance, long accountNumber) {
+            ReceiptForm form_Receipt = new ReceiptForm(transactionType, transactionAmount, transferToAccount, transferFromAccount, transferToNewBalance, transferFromNewBalance, accountNumber);
+            form_Receipt.ShowDialog();
+        }
+
+        private void btn_PrintReceiptDW_Click(object sender, EventArgs e) {
+            double fromBalance = 0;
+
+            if (accountTypeSelected == "Chequing") {
+                fromBalance = chequingBalance;
+            }
+            else if (accountTypeSelected == "Savings") {
+                fromBalance = savingsBalance;
+            }
+            printReceipt(actionTypeSelected, WDAmount, accountTypeSelected, accountTypeSelected, 0, fromBalance, accountNumber);
+        }
+
+        //actually btn_PrintReceiptTransfers... doesnt auto update, scared to change it
+        private void button2_Click(object sender, EventArgs e) {
+            printReceipt("Transfer", transferAmount, transferToAccountType, transferFromAccountType, chequingBalance, savingsBalance, accountNumber);
         }
     }
 
